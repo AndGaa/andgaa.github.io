@@ -9,29 +9,55 @@
 } */
 
 /* Container */
-.skil-set {
-  display: grid;
+.skill-set {
+  /* display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
-  margin: 3rem 0;
+  margin: 3rem 0; */
+	display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
 }
 
-/* Skill card */
-.skil-set skill {
+.skill {
   display: flex;
-  gap: 1.5rem;
-  padding: 2rem;
-  border-radius: 1rem;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(6px);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  background: #f9f9f9;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  padding: 20px;
+  flex: 1 1 400px;
+  align-items: flex-start;
+  transition: transform 0.2s;
 }
 
-/* Hover effect */
-.skil-set skill:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+.skill.wide {
+  flex: 2 1 800px;
+}
+
+.skill:hover {
+  transform: translateY(-5px);
+}
+
+.skill i {
+  font-size: 48px;
+  margin-right: 20px;
+  color: #4a90e2; /* Default icon color, can customize per skill */
+}
+
+.skill .content h3 {
+  margin: 0 0 10px 0;
+  font-size: 1.4em;
+  color: #333;
+}
+
+.skill ul {
+  margin: 0;
+  padding-left: 20px;
+  color: #555;
+}
+
+.skill ul li {
+  margin-bottom: 6px;
 }
 
 /* Icon */
@@ -40,24 +66,25 @@
   height: 3.5rem;
   flex-shrink: 0;
   object-fit: contain;
+  margin-right: 20px;
 }
 
 /* Text content */
-.skil-set .content h3 {
+.skill-set .content h3 {
   margin: 0 0 0.5rem;
   font-size: 1.2rem;
 }
 
-.skil-set .content p {
+.skill-set .content p {
   margin: 0;
-  font-size: 0.95rem;
+  font-size: 1rem;
   line-height: 1.6;
   opacity: 0.85;
 }
 
 /* Mobile layout */
 @media (max-width: 600px) {
-  .skil-set skill {
+  .skill-set skill {
     flex-direction: column;
     text-align: center;
     align-items: center;
@@ -164,7 +191,7 @@ input, select, textarea {
 	body, input, select, textarea {
 		color: #a2a2a2;
 		font-family: "Source Sans Pro", Helvetica, sans-serif;
-		font-size: 16pt;
+		font-size: 12pt;
 		font-weight: 400;
 		line-height: 1.75em;
 	}
@@ -2885,8 +2912,8 @@ input, select, textarea {
 
 	#main {
 		margin-left: 30%;
-		max-width: 54em;
-		padding: 8em 4em 4em 4em;
+		/* max-width: 54em; */
+		padding: 3em;
 		width: calc(100% - 35%);
 	}
 
@@ -3230,7 +3257,7 @@ input, select, textarea {
 			#main {
 				margin-left: 30%;
 				max-width: none;
-				padding: 6em 3em 3em 3em;
+				padding: 2em;
 				width: calc(100% - 30%);
 			}
 
