@@ -5,31 +5,40 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>ClickUp sync pipeline – Andreas Gaardsted Vad</title>
   <meta name="description" content="An Azure Function in Python that copies ClickUp time entries into monthly Parquet files in Azure Blob Storage.">
+  <link rel="canonical" href="https://andgaa.github.io/projects/clickup-sync.html">
+  <link rel="alternate" hreflang="en" href="https://andgaa.github.io/projects/clickup-sync.html">
+  <link rel="alternate" hreflang="da" href="https://andgaa.github.io/da/projects/clickup-sync.html">
+  <link rel="alternate" hreflang="x-default" href="https://andgaa.github.io/projects/clickup-sync.html">
+  <meta property="og:title" content="ClickUp sync pipeline – Andreas Gaardsted Vad">
+  <meta property="og:description" content="An Azure Function in Python that copies ClickUp time entries into monthly Parquet files in Azure Blob Storage.">
+  <meta property="og:image" content="https://andgaa.github.io/img/andreas.webp">
+  <meta property="og:type" content="website">
   <link rel="icon" href="../img/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;600;700;800&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&amp;display=swap">
   <link rel="stylesheet" href="../css/site.css">
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
-
-  <header class="topbar">
-    <div class="wrap">
-      <a class="topbar__name" href="../">Andreas Gaardsted Vad</a>
-      <nav aria-label="Main">
-        <ul>
-          <li><a href="../#skills">Skills</a></li>
-          <li><a href="../#work">Work</a></li>
-          <li><a href="../#contact">Contact</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
-
-  <main id="main" class="wrap">
-    <section class="project-hero">
-      <h1>ClickUp sync pipeline</h1>
+  <div class="band">
+    <header class="topbar">
+      <div class="wrap">
+        <a class="topbar__name" href="../">Andreas Gaardsted Vad</a>
+        <nav aria-label="Main">
+          <ul>
+            <li><a href="../#work">Work</a></li>
+            <li><a href="../#skills">Skills</a></li>
+            <li><a href="../#about">About</a></li>
+            <li><a href="../#contact">Contact</a></li>
+            <li><a class="lang" href="../da/projects/clickup-sync.html" hreflang="da" lang="da">Dansk</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <section class="project-hero wrap" aria-labelledby="title">
+      <a class="crumb" href="../#work">← All work</a>
+      <h1 id="title">ClickUp sync pipeline</h1>
       <p class="lede">An Azure Function that copies time entries from ClickUp into Parquet files, month by month, so reports and apps never have to call the API themselves.</p>
       <dl class="facts">
         <div><dt>Stack</dt><dd>Python, Azure Functions, Azure Blob Storage</dd></div>
@@ -38,56 +47,21 @@
         <div><dt>Skills</dt><dd>Data engineering, API integration, reliability</dd></div>
       </dl>
     </section>
-
-    <figure class="figure">
-      <img src="../img/pipeline.svg" width="1200" height="560" alt="Diagram: time entries flow from the ClickUp API into an Azure Function, which checks freshness and takes a lock, splits the date range into months, fetches them in parallel and writes one Parquet file per month plus run metadata to Blob Storage. The Power BI report and the approval app read from there.">
-      <figcaption>How a sync runs.</figcaption>
-    </figure>
-
-    <div class="block">
-      <div class="prose">
-        <h2>The problem</h2>
-        <p>Several tools needed the same time entries from ClickUp: the Power BI time tracking report, and later the approval app. Pulling them straight from the API every time was slow, ran into the API's limits and meant every tool had to solve the same problem.</p>
-        <p>The pipeline fetches the data once, stores it in an analysis-friendly format, and lets everything downstream read from storage instead.</p>
-      </div>
-    </div>
-
-    <div class="block block--split">
-      <div class="prose">
-        <h2>How it works</h2>
-        <ul>
-          <li>Three refresh strategies: the last 12 months, a custom range of months, or a full refresh of the entire history</li>
-          <li>The date range is split into monthly partitions, so a normal run only rewrites the months that can still change</li>
-          <li>Months are fetched in parallel by a small pool of workers, which keeps runs short without flooding the API</li>
-          <li>Each month is normalised with pandas and written as its own Parquet file in Blob Storage</li>
-        </ul>
-      </div>
-      <div class="prose">
-        <h2>Built to run unattended</h2>
-        <ul>
-          <li>A freshness check skips the run if the data was just synced</li>
-          <li>A lock in Blob Storage stops two syncs from running at once, and stale locks from crashed runs are cleared automatically</li>
-          <li>Every run writes its result – rows per month, duration, worker count, errors and what triggered it – to a latest-run file and a history log</li>
-          <li>A status endpoint reports the last run, so other tools can check before they read</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="block">
-      <div class="prose">
-        <h2>Structure</h2>
-        <p>A coordinator runs the sync and delegates to small, single-purpose services for partitioning, fetching from ClickUp, writing Parquet, run metadata and locking. Configuration comes from environment variables, so the same code runs locally and in Azure.</p>
-      </div>
-    </div>
-
-    <nav class="next" aria-label="Projects">
-      <a href="approval-app.html">Previous: Approval and invoicing app</a>
-      <a href="timetrack-powerbi.html">Next: Time tracking report</a>
-    </nav>
+  </div>
+  <main id="main" class="wrap project">
+    <figure class="figure"><img src="../img/pipeline.svg" width="1200" height="560" alt="Diagram: time entries flow from the ClickUp API into an Azure Function, which checks freshness and takes a lock, splits the date range into months, fetches them in parallel and writes one Parquet file per month plus run metadata to Blob Storage. The Power BI report and the approval app read from there."><figcaption>How a sync runs.</figcaption></figure>
+    <div class="block"><div class="prose"><h2>The problem</h2><p>Several tools needed the same time entries from ClickUp: the Power BI time tracking report, and later the approval app. Pulling them straight from the API every time was slow, ran into the API's limits and meant every tool had to solve the same problem.</p><p>The pipeline fetches the data once, stores it in an analysis-friendly format, and lets everything downstream read from storage instead.</p></div></div>
+    <div class="block block--split"><div class="prose"><h2>How it works</h2><ul><li>Three refresh strategies: the last 12 months, a custom range of months, or a full refresh of the entire history</li><li>The date range is split into monthly partitions, so a normal run only rewrites the months that can still change</li><li>Months are fetched in parallel by a small pool of workers, which keeps runs short without flooding the API</li><li>Each month is normalised with pandas and written as its own Parquet file in Blob Storage</li></ul></div><div class="prose"><h2>Built to run unattended</h2><ul><li>A freshness check skips the run if the data was just synced</li><li>A lock in Blob Storage stops two syncs from running at once, and stale locks from crashed runs are cleared automatically</li><li>Every run writes its result – rows per month, duration, worker count, errors and what triggered it – to a latest-run file and a history log</li><li>A status endpoint reports the last run, so other tools can check before they read</li></ul></div></div>
+    <div class="block"><div class="prose"><h2>Structure</h2><p>A coordinator runs the sync and delegates to small, single-purpose services for partitioning, fetching from ClickUp, writing Parquet, run metadata and locking. Configuration comes from environment variables, so the same code runs locally and in Azure.</p></div></div>
+    <nav class="next" aria-label="Projects"><a href="approval-app.html">Previous: Approval and invoicing app</a><a href="timetrack-powerbi.html">Next: Time tracking report</a></nav>
   </main>
-
   <footer class="footer">
     <div class="wrap">© Andreas Gaardsted Vad</div>
   </footer>
+  <dialog class="lightbox" aria-label="Screenshot">
+    <form method="dialog"><button>Close</button></form>
+    <img src="" alt="">
+  </dialog>
+  <script src="../js/site.js" defer></script>
 </body>
 </html>

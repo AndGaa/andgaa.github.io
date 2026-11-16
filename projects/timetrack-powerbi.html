@@ -5,101 +5,60 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Time tracking report – Andreas Gaardsted Vad</title>
   <meta name="description" content="A Power BI report on project hours, budgets and invoicing, built on ClickUp and e-conomic data in Azure Data Lake.">
+  <link rel="canonical" href="https://andgaa.github.io/projects/timetrack-powerbi.html">
+  <link rel="alternate" hreflang="en" href="https://andgaa.github.io/projects/timetrack-powerbi.html">
+  <link rel="alternate" hreflang="da" href="https://andgaa.github.io/da/projects/timetrack-powerbi.html">
+  <link rel="alternate" hreflang="x-default" href="https://andgaa.github.io/projects/timetrack-powerbi.html">
+  <meta property="og:title" content="Time tracking report – Andreas Gaardsted Vad">
+  <meta property="og:description" content="A Power BI report on project hours, budgets and invoicing, built on ClickUp and e-conomic data in Azure Data Lake.">
+  <meta property="og:image" content="https://andgaa.github.io/img/andreas.webp">
+  <meta property="og:type" content="website">
   <link rel="icon" href="../img/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;600;700;800&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&amp;display=swap">
   <link rel="stylesheet" href="../css/site.css">
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
-
-  <header class="topbar">
-    <div class="wrap">
-      <a class="topbar__name" href="../">Andreas Gaardsted Vad</a>
-      <nav aria-label="Main">
-        <ul>
-          <li><a href="../#skills">Skills</a></li>
-          <li><a href="../#work">Work</a></li>
-          <li><a href="../#contact">Contact</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
-
-  <main id="main" class="wrap">
-    <section class="project-hero">
-      <h1>Time tracking report</h1>
+  <div class="band">
+    <header class="topbar">
+      <div class="wrap">
+        <a class="topbar__name" href="../">Andreas Gaardsted Vad</a>
+        <nav aria-label="Main">
+          <ul>
+            <li><a href="../#work">Work</a></li>
+            <li><a href="../#skills">Skills</a></li>
+            <li><a href="../#about">About</a></li>
+            <li><a href="../#contact">Contact</a></li>
+            <li><a class="lang" href="../da/projects/timetrack-powerbi.html" hreflang="da" lang="da">Dansk</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <section class="project-hero wrap" aria-labelledby="title">
+      <a class="crumb" href="../#work">← All work</a>
+      <h1 id="title">Time tracking report</h1>
       <p class="lede">A Power BI report that shows where project hours go – billable time, budgets, prepaid hours and invoicing – for project managers and leadership.</p>
       <dl class="facts">
-        <div><dt>Role</dt><dd>Data analyst</dd></div>
         <div><dt>Stack</dt><dd>Power BI (PBIP in Git), DAX, Power Query (M), Power Automate</dd></div>
         <div><dt>Data</dt><dd>ClickUp and e‑conomic via Azure Data Lake, budgets from SharePoint</dd></div>
         <div><dt>Size</dt><dd>11 pages, around 160 measures</dd></div>
+        <div><dt>Role</dt><dd>Data analyst</dd></div>
       </dl>
     </section>
-
-    <figure class="figure">
-      <button type="button" aria-label="Enlarge screenshot"><img src="../img/timetrack-overview.webp" width="1600" height="902" alt="Project overview page: tracked hours in the period, billable and unbillable totals, budget status per project and hours per project."></button>
-      <figcaption>Project overview. Client and project names are anonymised.</figcaption>
-    </figure>
-
-    <div class="block">
-      <div class="prose">
-        <h2>The problem</h2>
-        <p>The business had no clear view of how time was spent across projects and tasks. Hours were logged in ClickUp and invoicing lived in e‑conomic, so answering simple questions – which projects are over budget, how much of our time is billable – meant manual exports and spreadsheets.</p>
-        <p>The report brings both sources together and gives project managers and leadership one place to follow time, budgets and resource use.</p>
-      </div>
-    </div>
-
-    <div class="block block--split">
-      <figure class="figure">
-        <button type="button" aria-label="Enlarge screenshot"><img src="../img/timetrack-project.webp" width="1600" height="905" alt="Project detail page with time per employee and task." loading="lazy"></button>
-        <figcaption>Project detail page.</figcaption>
-      </figure>
-      <div class="prose">
-        <h2>Key features</h2>
-        <ul>
-          <li>Billable versus unbillable time, filtered by date, project manager, client and status</li>
-          <li>Budget status per project: over, near or within budget</li>
-          <li>Drill-through from the overview to a single project and the people working on it</li>
-          <li>Pages for people, prepaid hours, finances, hourly rates and printable timesheets</li>
-          <li>Role-based access, so each person sees the data they should</li>
-          <li>On-demand refresh from the report through a Power Automate flow</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="block block--split">
-      <div class="prose">
-        <h2>The model</h2>
-        <p>ClickUp is the team's project tool, and its structure of spaces, folders and lists doesn't match the project structure needed for reporting. Project metadata is kept in ClickUp in its own pseudo-structure and linked to tasks and time entries through a bridge table.</p>
-        <p>Around that sit invoices and prepaid hours from e‑conomic, budgets from a SharePoint workbook, users and one shared calendar. That makes it possible to follow hours and money by project, client and employee. The report is saved as a Power BI project (PBIP), so the model and every measure are versioned in Git.</p>
-      </div>
-      <figure class="figure">
-        <button type="button" aria-label="Enlarge screenshot"><img src="../img/timetrack-model.webp" width="1155" height="1157" alt="Power BI model view with tables for time entries, tasks, project data, clients, users, calendar, budget, invoices and prepaid hours." loading="lazy"></button>
-        <figcaption>The semantic model.</figcaption>
-      </figure>
-    </div>
-
-    <div class="block">
-      <div class="prose">
-        <h2>How it grew</h2>
-        <p>The first version called the ClickUp and e‑conomic APIs directly from Power Query. The ClickUp API limits how much a single request returns, so I added pagination and staged the time entries before reshaping them. It worked, but every refresh got slower and more fragile as the history grew.</p>
-        <p>So I moved the extraction out of Power BI and into the <a href="clickup-sync.html">ClickUp sync pipeline</a>. The report now reads Parquet and JSON files from Azure Data Lake, and the time entries use incremental refresh, so only recent data is reloaded. The same files feed the <a href="approval-app.html">approval app</a>, so both tools show the same numbers.</p>
-      </div>
-    </div>
-
-    <nav class="next" aria-label="Projects">
-      <a href="clickup-sync.html">Previous: ClickUp sync pipeline</a>
-      <a href="absence-app.html">Next: Vacation and absence app</a>
-    </nav>
+  </div>
+  <main id="main" class="wrap project">
+    <figure class="figure"><button type="button" aria-label="Enlarge screenshot"><img src="../img/timetrack-overview.webp" width="1600" height="902" alt="Project overview page: tracked hours in the period, billable and unbillable totals, budget status per project and hours per project."></button><figcaption>Project overview. Client and project names are anonymised.</figcaption></figure>
+    <div class="block"><div class="prose"><h2>The problem</h2><p>The business had no clear view of how time was spent across projects and tasks. Hours were logged in ClickUp and invoicing lived in e‑conomic, so answering simple questions – which projects are over budget, how much of our time is billable – meant manual exports and spreadsheets.</p><p>The report brings the sources together and gives project managers and leadership one place to follow time, budgets and resource use.</p></div></div>
+    <div class="block block--split"><figure class="figure"><button type="button" aria-label="Enlarge screenshot"><img src="../img/timetrack-project.webp" width="1600" height="905" alt="Project detail page with time per task, budget, invoiced hours, time per person and a burndown chart." loading="lazy"></button><figcaption>Project detail page. Task names and people are blurred.</figcaption></figure><div class="prose"><h2>Key features</h2><ul><li>Billable versus unbillable time, filtered by date, project manager, client and status</li><li>Budget status per project: over, near or within budget</li><li>Drill-through from the overview to a single project and the people working on it</li><li>Pages for people, prepaid hours, finances, hourly rates and printable timesheets</li><li>Role-based access, so each person sees the data they should</li><li>On-demand refresh from the report through a Power Automate flow</li></ul></div></div>
+    <div class="block block--split"><div class="prose"><h2>The model</h2><p>ClickUp is the team's project tool, and its structure of spaces, folders and lists doesn't match the project structure needed for reporting. Project metadata is kept in ClickUp in its own pseudo-structure and linked to tasks and time entries through a bridge table.</p><p>Around that sit invoices and prepaid hours from e‑conomic, budgets from a SharePoint workbook, users and one shared calendar. That makes it possible to follow hours and money by project, client and employee. The report is saved as a Power BI project (PBIP), so the model and every measure are versioned in Git.</p></div><figure class="figure"><button type="button" aria-label="Enlarge screenshot"><img src="../img/timetrack-model.webp" width="1155" height="1157" alt="Power BI model view with tables for time entries, tasks, project data, clients, users, calendar, budget, invoices and prepaid hours." loading="lazy"></button><figcaption>The semantic model.</figcaption></figure></div>
+    <div class="block"><div class="prose"><h2>How it grew</h2><p>The first version called the ClickUp and e‑conomic APIs directly from Power Query. The ClickUp API limits how much a single request returns, so I added pagination and staged the time entries before reshaping them. It worked, but every refresh got slower and more fragile as the history grew.</p><p>So I moved the extraction out of Power BI and into the <a href="clickup-sync.html">ClickUp sync pipeline</a>. The report now reads Parquet and JSON files from Azure Data Lake, and the time entries use incremental refresh, so only recent data is reloaded. The same files feed the <a href="approval-app.html">approval app</a>, so both tools show the same numbers.</p></div></div>
+    <nav class="next" aria-label="Projects"><a href="clickup-sync.html">Previous: ClickUp sync pipeline</a><a href="absence-app.html">Next: Vacation and absence app</a></nav>
   </main>
-
   <footer class="footer">
     <div class="wrap">© Andreas Gaardsted Vad</div>
   </footer>
-
   <dialog class="lightbox" aria-label="Screenshot">
     <form method="dialog"><button>Close</button></form>
     <img src="" alt="">

@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="da">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Andreas Gaardsted Vad – Dataanalytiker og BI-konsulent</title>
+  <meta name="description" content="Andreas Gaardsted Vad bygger datapipelines, Power BI-modeller og forretningsapps på Azure. Dataanalytiker og BI-konsulent i Aarhus.">
+  <link rel="canonical" href="https://andgaa.github.io/da/">
+  <link rel="alternate" hreflang="en" href="https://andgaa.github.io/">
+  <link rel="alternate" hreflang="da" href="https://andgaa.github.io/da/">
+  <link rel="alternate" hreflang="x-default" href="https://andgaa.github.io/">
+  <meta property="og:title" content="Andreas Gaardsted Vad – Dataanalytiker og BI-konsulent">
+  <meta property="og:description" content="Andreas Gaardsted Vad bygger datapipelines, Power BI-modeller og forretningsapps på Azure. Dataanalytiker og BI-konsulent i Aarhus.">
+  <meta property="og:image" content="https://andgaa.github.io/img/andreas.webp">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="../img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&amp;display=swap">
+  <link rel="stylesheet" href="../css/site.css">
+</head>
+<body>
+  <a class="skip" href="#main">Gå til indhold</a>
+  <div class="band">
+    <header class="topbar">
+      <div class="wrap">
+        <a class="topbar__name" href="../da/">Andreas Gaardsted Vad</a>
+        <nav aria-label="Hovedmenu">
+          <ul>
+            <li><a href="#work">Arbejde</a></li>
+            <li><a href="#skills">Kompetencer</a></li>
+            <li><a href="#about">Om mig</a></li>
+            <li><a href="#contact">Kontakt</a></li>
+            <li><a class="lang" href="../" hreflang="en" lang="en">English</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <section class="hero wrap" aria-labelledby="name">
+      <div class="hero__grid">
+        <div>
+          <h1 id="name">Andreas Gaardsted Vad</h1>
+          <p class="hero__claim">Jeg bygger pipelines, datamodeller og apps bag de tal, en virksomhed styrer efter.</p>
+          <p class="hero__meta">Dataanalytiker og BI-konsulent i Aarhus. Microsoft Certified: Fabric Analytics Engineer Associate.</p>
+          <ul class="actions">
+            <li><a class="btn btn--light" href="mailto:andreasgaardsted@gmail.com">Skriv til mig</a></li>
+            <li><a class="btn" href="https://www.linkedin.com/in/andreas-gaardsted-vad/">LinkedIn</a></li>
+          </ul>
+        </div>
+        <img class="hero__photo" src="../img/andreas.webp" width="640" height="640" alt="Portræt af Andreas Gaardsted Vad">
+      </div>
+      <ol class="lineage" aria-label="Det jeg bygger, fra kilde til beslutning">
+        <li><b>Kilder</b><span>ClickUp, e‑conomic og SharePoint</span></li>
+        <li><b>Indsaml</b><span>Python-jobs på Azure Functions</span></li>
+        <li><b>Lagr</b><span>Parquet-filer i Azure Data Lake</span></li>
+        <li><b>Modellér</b><span>Semantiske modeller i Power BI og DAX</span></li>
+        <li><b>Lever</b><span>Rapporter, webapps og automatiserede flows</span></li>
+      </ol>
+    </section>
+  </div>
+  <main id="main">
+    <section class="section" id="work" aria-labelledby="work-title">
+      <div class="wrap">
+        <div class="section__head">
+          <h2 id="work-title">Arbejde</h2>
+          <p>Fire værktøjer, jeg har bygget. De tre første deler ét dataflow: Synkroniseringen henter de timer, som godkendelsesappen og Power BI-rapporten bygger på. Skærmbillederne viser demodata eller er anonymiserede.</p>
+        </div>
+        <article class="feature">
+          <a class="shot" href="projects/approval-app.html" tabindex="-1" aria-hidden="true"><img src="../img/approval-project.webp" width="1600" height="1000" alt="" loading="lazy"></a>
+          <div class="feature__text">
+            <h3><a href="projects/approval-app.html">App til godkendelse og fakturering</a></h3>
+            <p>Projektledere godkender hvert projekts timer måned for måned og sender dem videre til timesedler og fakturakladder – klippekort inklusive.</p>
+            <ul class="tags"><li>Python</li><li>Azure Functions</li><li>Table Storage</li><li>Power Automate</li></ul>
+            <a href="projects/approval-app.html">Læs casen</a>
+          </div>
+        </article>
+        <ul class="rows">
+          <li class="row">
+            <a class="files" href="projects/clickup-sync.html" tabindex="-1" aria-hidden="true"><span>2026-08.parquet</span><span>2026-09.parquet</span><span>2026-10.parquet</span></a>
+            <div>
+              <h3><a href="projects/clickup-sync.html">ClickUp-synkronisering</a></h3>
+              <p>Kopierer tidsregistreringer fra ClickUp til én Parquet-fil pr. måned, hentet parallelt, med låsning og en log over hver kørsel.</p>
+            </div>
+            <p class="row__stack">Python, Azure Functions, Blob Storage, pandas, PyArrow</p>
+          </li>
+          <li class="row">
+            <a class="shot" href="projects/timetrack-powerbi.html" tabindex="-1" aria-hidden="true"><img src="../img/timetrack-overview.webp" alt="" loading="lazy" width="1600" height="900"></a>
+            <div>
+              <h3><a href="projects/timetrack-powerbi.html">Timerapport</a></h3>
+              <p>En Power BI-rapport på 11 sider om timer, budgetter, klippekort og fakturering, opdateret inkrementelt fra Data Lake.</p>
+            </div>
+            <p class="row__stack">Power BI, DAX, Power Query, PBIP i Git</p>
+          </li>
+          <li class="row">
+            <a class="shot" href="projects/absence-app.html" tabindex="-1" aria-hidden="true"><img src="../img/absence-devices.webp" alt="" loading="lazy" width="1600" height="900"></a>
+            <div>
+              <h3><a href="projects/absence-app.html">Ferie- og fraværsapp</a></h3>
+              <p>Medarbejdere registrerer fravær, ledere godkender det, og feriesaldi føres korrekt videre fra år til år.</p>
+            </div>
+            <p class="row__stack">Python, Django, PostgreSQL, Azure App Service, GitHub Actions</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section" id="skills" aria-labelledby="skills-title">
+      <div class="wrap">
+        <div class="section__head">
+          <h2 id="skills-title">Kompetencer</h2>
+          <p>Ordnet efter, hvor de hører til i dataflowet – fra kilde til beslutning. Hver kompetence linker til det projekt, jeg har brugt den i.</p>
+        </div>
+        <div class="skills">
+        <section class="stage" aria-labelledby="stage-1">
+          <div class="stage__head"><span class="stage__num" aria-hidden="true">1</span><h3 id="stage-1">Indsaml</h3></div>
+          <p>Data ud af de systemer, virksomheden allerede bruger.</p>
+          <ul>
+              <li><strong>REST-API'er</strong><span>ClickUp og e‑conomic, med paginering, genforsøg og staging</span><span class="chips"><a class="tag" href="projects/clickup-sync.html">Synkronisering</a><a class="tag" href="projects/timetrack-powerbi.html">Timerapport</a></span></li>
+              <li><strong>Python</strong><span>pandas, PyArrow og requests til udtræk og omformning</span><span class="chips"><a class="tag" href="projects/clickup-sync.html">Synkronisering</a><a class="tag" href="projects/approval-app.html">Godkendelsesapp</a></span></li>
+              <li><strong>Azure Functions</strong><span>Jobs efter behov med låsning, friskhedstjek og kørselslog</span><span class="chips"><a class="tag" href="projects/clickup-sync.html">Synkronisering</a><a class="tag" href="projects/approval-app.html">Godkendelsesapp</a></span></li>
+              <li><strong>Power Query (M)</strong><span>Egne API-forbindelser og transformationer</span><span class="chips"><a class="tag" href="projects/timetrack-powerbi.html">Timerapport</a></span></li>
+          </ul>
+        </section>
+        <section class="stage" aria-labelledby="stage-2">
+          <div class="stage__head"><span class="stage__num" aria-hidden="true">2</span><h3 id="stage-2">Lagr</h3></div>
+          <p>Data i en form, der er hurtig og billig at læse.</p>
+          <ul>
+              <li><strong>Parquet i Azure Data Lake</strong><span>Månedspartitioner – én fil pr. måned, som kun skrives igen, når den ændrer sig</span><span class="chips"><a class="tag" href="projects/clickup-sync.html">Synkronisering</a><a class="tag" href="projects/timetrack-powerbi.html">Timerapport</a></span></li>
+              <li><strong>PostgreSQL</strong><span>Relationelle modeller med constraints til HR- og feriedata</span><span class="chips"><a class="tag" href="projects/absence-app.html">HR-app</a></span></li>
+              <li><strong>Azure Table og Blob Storage</strong><span>Appdata, cache og uploads</span><span class="chips"><a class="tag" href="projects/approval-app.html">Godkendelsesapp</a><a class="tag" href="projects/absence-app.html">HR-app</a></span></li>
+          </ul>
+        </section>
+        <section class="stage" aria-labelledby="stage-3">
+          <div class="stage__head"><span class="stage__num" aria-hidden="true">3</span><h3 id="stage-3">Modellér</h3></div>
+          <p>Rå tabeller bliver til tal, folk stoler på.</p>
+          <ul>
+              <li><strong>Semantiske modeller i Power BI</strong><span>Brotabeller, én fælles kalender og kilder samlet på tværs af systemer</span><span class="chips"><a class="tag" href="projects/timetrack-powerbi.html">Timerapport</a></span></li>
+              <li><strong>DAX</strong><span>Omkring 160 measures til budgetter, fakturering og klippekort</span><span class="chips"><a class="tag" href="projects/timetrack-powerbi.html">Timerapport</a></span></li>
+              <li><strong>Inkrementel opdatering og sikkerhed</strong><span>Kun nye data indlæses igen, og hver bruger ser det, de skal</span><span class="chips"><a class="tag" href="projects/timetrack-powerbi.html">Timerapport</a></span></li>
+              <li><strong>PBIP i Git</strong><span>Modellen og alle measures versioneret som kode</span><span class="chips"><a class="tag" href="projects/timetrack-powerbi.html">Timerapport</a></span></li>
+          </ul>
+        </section>
+        <section class="stage" aria-labelledby="stage-4">
+          <div class="stage__head"><span class="stage__num" aria-hidden="true">4</span><h3 id="stage-4">Lever</h3></div>
+          <p>Tallene ud, hvor beslutningerne træffes.</p>
+          <ul>
+              <li><strong>Power BI-rapporter</strong><span>En rapport på 11 sider til projektledere og ledelse</span><span class="chips"><a class="tag" href="projects/timetrack-powerbi.html">Timerapport</a></span></li>
+              <li><strong>Webapps</strong><span>Apps i Django og Azure Functions med Microsoft-login</span><span class="chips"><a class="tag" href="projects/absence-app.html">HR-app</a><a class="tag" href="projects/approval-app.html">Godkendelsesapp</a></span></li>
+              <li><strong>Power Automate</strong><span>Flows, der laver timesedler og fakturakladder</span><span class="chips"><a class="tag" href="projects/approval-app.html">Godkendelsesapp</a><a class="tag" href="projects/timetrack-powerbi.html">Timerapport</a></span></li>
+              <li><strong>CI/CD</strong><span>GitHub Actions, der deployer til Azure – test og produktion</span><span class="chips"><a class="tag" href="projects/absence-app.html">HR-app</a></span></li>
+          </ul>
+        </section>
+        </div>
+        <div class="cert">
+          <div><strong>Microsoft Certified: Fabric Analytics Engineer Associate</strong><span>Lakehouses, warehouses, pipelines og notebooks i Microsoft Fabric.</span></div>
+          <a class="btn" href="https://learn.microsoft.com/api/credentials/share/en-us/AndreasGaardstedVad-6602/70CAC734A6191983?sharingId=DD96852B407B510C">Se certifikatet</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--white" id="about" aria-labelledby="about-title">
+      <div class="wrap about">
+        <div class="about__intro">
+          <h2 id="about-title">Om mig</h2>
+          <p>Jeg startede i Microsoft Power Platform – Power BI, Power Automate og Power Apps – og har bevæget mig mere og mere over mod Python, hvor jeg bygger de pipelines og apps, rapporterne afhænger af.</p><p>Før data tog jeg en kandidat i anvendt filosofi med speciale i organisations- og dialogfilosofi. Det kan ses i min måde at arbejde på: Jeg starter med at spørge, hvad folk egentlig har brug for at vide.</p>
+          <div>
+            <h3>Det brænder jeg for</h3>
+            <ul><li>Automatisering af komplekse forretningsprocesser</li><li>Rapportering, folk bruger til at træffe beslutninger</li><li>Forretningsapps, der er nemme at bruge</li></ul>
+          </div>
+        </div>
+        <div>
+          <h3 class="sub">Erfaring</h3>
+          <ol class="jobs">
+          <li><span class="when">2022 – nu</span><div><strong>Dataanalytiker</strong><span>illumi, Aarhus</span><p>Power BI-rapporter og dashboards, ETL i Fabric og i Python på Azure Functions samt forretningsapplikationer i Django.</p></div></li>
+          <li><span class="when">2021 – 2022</span><div><strong>Digital konsulent</strong><span>illumi, Aarhus</span></div></li>
+          <li><span class="when">2020 – 2023</span><div><strong>Power BI- og kommunikationskonsulent</strong><span>Vanebrudspalæet, Aarhus</span></div></li>
+          <li><span class="when">2020 – 2021</span><div><strong>Grundlægger</strong><span>Forstå Din Rådgiver</span></div></li>
+          <li><span class="when">2018 – 2020</span><div><strong>Digital marketing</strong><span>Kognitiv Terapi Center Århus</span><p>Kommunikationspraktikant og siden digital marketingmedarbejder.</p></div></li>
+          </ol>
+          <div class="facts-2">
+            <div>
+              <h3>Uddannelse</h3>
+            <p><strong>Kandidat, anvendt filosofi</strong><br>Organisations- og dialogfilosofi<br><span class="muted">Aalborg Universitet, 2017 – 2019</span></p>
+            <p><strong>Bachelor, anvendt filosofi</strong><br><span class="muted">Aalborg Universitet, 2014 – 2017</span></p>
+            </div>
+            <div>
+              <h3>Sprog</h3>
+              <p>Dansk <span class="muted">– modersmål</span><br>Engelsk <span class="muted">– flydende i arbejdssammenhæng</span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="band" id="contact" aria-labelledby="contact-title">
+      <div class="wrap contact">
+        <h2 id="contact-title">Lad os tage en snak</h2>
+        <p>Jeg er åben for nye stillinger inden for data og BI. Mail er den hurtigste vej til mig.</p>
+        <a class="contact__mail" href="mailto:andreasgaardsted@gmail.com">andreasgaardsted@gmail.com</a>
+        <ul><li><a href="https://www.linkedin.com/in/andreas-gaardsted-vad/">LinkedIn</a></li><li><a href="https://github.com/AndGaa">GitHub</a></li></ul>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
+    <div class="wrap">© Andreas Gaardsted Vad</div>
+  </footer>
+
+</body>
+</html>

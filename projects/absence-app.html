@@ -4,32 +4,41 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Vacation and absence app – Andreas Gaardsted Vad</title>
-  <meta name="description" content="An app for registering and approving vacation, sick days and working from home, with vacation balances managed year to year.">
+  <meta name="description" content="A Django app on Azure for registering and approving vacation, sick days and working from home, with vacation balances managed year to year.">
+  <link rel="canonical" href="https://andgaa.github.io/projects/absence-app.html">
+  <link rel="alternate" hreflang="en" href="https://andgaa.github.io/projects/absence-app.html">
+  <link rel="alternate" hreflang="da" href="https://andgaa.github.io/da/projects/absence-app.html">
+  <link rel="alternate" hreflang="x-default" href="https://andgaa.github.io/projects/absence-app.html">
+  <meta property="og:title" content="Vacation and absence app – Andreas Gaardsted Vad">
+  <meta property="og:description" content="A Django app on Azure for registering and approving vacation, sick days and working from home, with vacation balances managed year to year.">
+  <meta property="og:image" content="https://andgaa.github.io/img/andreas.webp">
+  <meta property="og:type" content="website">
   <link rel="icon" href="../img/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;600;700;800&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&amp;display=swap">
   <link rel="stylesheet" href="../css/site.css">
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
-
-  <header class="topbar">
-    <div class="wrap">
-      <a class="topbar__name" href="../">Andreas Gaardsted Vad</a>
-      <nav aria-label="Main">
-        <ul>
-          <li><a href="../#skills">Skills</a></li>
-          <li><a href="../#work">Work</a></li>
-          <li><a href="../#contact">Contact</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
-
-  <main id="main" class="wrap">
-    <section class="project-hero">
-      <h1>Vacation and absence app</h1>
+  <div class="band">
+    <header class="topbar">
+      <div class="wrap">
+        <a class="topbar__name" href="../">Andreas Gaardsted Vad</a>
+        <nav aria-label="Main">
+          <ul>
+            <li><a href="../#work">Work</a></li>
+            <li><a href="../#skills">Skills</a></li>
+            <li><a href="../#about">About</a></li>
+            <li><a href="../#contact">Contact</a></li>
+            <li><a class="lang" href="../da/projects/absence-app.html" hreflang="da" lang="da">Dansk</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <section class="project-hero wrap" aria-labelledby="title">
+      <a class="crumb" href="../#work">← All work</a>
+      <h1 id="title">Vacation and absence app</h1>
       <p class="lede">One place for employees to register time away and for managers to approve it and keep vacation balances right.</p>
       <dl class="facts">
         <div><dt>Stack</dt><dd>Python, Django, PostgreSQL</dd></div>
@@ -38,82 +47,19 @@
         <div><dt>Users</dt><dd>Employees, managers and HR – on desktop, tablet and phone</dd></div>
       </dl>
     </section>
-
-    <figure class="figure">
-      <button type="button" aria-label="Enlarge screenshot"><img src="../img/absence-devices.webp" width="1536" height="894" alt="The app shown on a laptop, a tablet and a phone." ></button>
-      <figcaption>The same app on desktop, tablet and phone.</figcaption>
-    </figure>
-
-    <div class="block">
-      <div class="prose">
-        <h2>The problem</h2>
-        <p>Vacation, sick days and working from home were registered in different places, and keeping track of each employee's vacation balance across vacation years took manual work. Managers had no single overview of who was away, and what was waiting for their approval.</p>
-      </div>
-    </div>
-
-    <div class="block block--split">
-      <figure class="figure">
-        <button type="button" aria-label="Enlarge screenshot"><img src="../img/absence-home.webp" width="1508" height="1121" alt="Employee home page showing remaining vacation, work from home, sick days, sick child and leave for the current vacation year, with a chart of registrations by month." loading="lazy"></button>
-        <figcaption>An employee's home page for the current vacation year.</figcaption>
-      </figure>
-      <div class="prose">
-        <h2>For employees</h2>
-        <ul>
-          <li>Register vacation, sick days, sick child, days off, leave and working from home</li>
-          <li>See the remaining vacation balance for the current vacation year at a glance</li>
-          <li>Follow the status of each registration and see the year's history by month</li>
-          <li>Sign in with their Microsoft work account, and get an email when a request is approved or declined</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="block block--split">
-      <div class="prose">
-        <h2>For managers</h2>
-        <ul>
-          <li>An overview of today's approved registrations and those waiting for approval</li>
-          <li>All registrations per employee and type in one chart and table</li>
-          <li>Approve or decline with one click – managers and HR are notified by email when something new comes in</li>
-          <li>Reports on attendance, registrations and vacation</li>
-          <li>Messages to the team on Slack straight from the app</li>
-        </ul>
-      </div>
-      <figure class="figure">
-        <button type="button" aria-label="Enlarge screenshot"><img src="../img/absence-overview.webp" width="1511" height="1103" alt="Manager overview with today's approved registrations, waiting registrations, a Slack message box and a chart of all registrations per employee." loading="lazy"></button>
-        <figcaption>Manager overview.</figcaption>
-      </figure>
-    </div>
-
-    <div class="block block--split">
-      <figure class="figure">
-        <button type="button" aria-label="Enlarge screenshot"><img src="../img/absence-vacation.webp" width="1516" height="951" alt="Vacation management page listing each employee's vacation days, days spent and days left for 2025–2026, with actions for new calendar year, new vacation year, custom transfer and bulk use of vacation." loading="lazy"></button>
-        <figcaption>Vacation management.</figcaption>
-      </figure>
-      <div class="prose">
-        <h2>Vacation years</h2>
-        <p>The Danish vacation year runs from September to August, and balances have to be carried over correctly. The vacation management page handles that: starting a new vacation or calendar year, transferring days between years, and registering shared vacation days for everyone at once.</p>
-        <p>Danish public holidays are fetched automatically into the calendar, and the sixth vacation week is tracked separately from the statutory five.</p>
-      </div>
-    </div>
-
-    <div class="block">
-      <div class="prose">
-        <h2>How it's built</h2>
-        <p>A Django app on PostgreSQL, with role-based access so employees, project managers and HR each see what they should. Profile pictures and other uploads live in Azure Blob Storage.</p>
-        <p>It runs on Azure App Service with separate staging and production environments, and GitHub Actions deploys each one automatically.</p>
-      </div>
-    </div>
-
-    <nav class="next" aria-label="Projects">
-      <a href="timetrack-powerbi.html">Previous: Time tracking report</a>
-      <a href="../#work">All work</a>
-    </nav>
+  </div>
+  <main id="main" class="wrap project">
+    <figure class="figure"><button type="button" aria-label="Enlarge screenshot"><img src="../img/absence-devices.webp" width="1536" height="894" alt="The app shown on a laptop, a tablet and a phone."></button><figcaption>The same app on desktop, tablet and phone. Logo and colleagues' names are blurred.</figcaption></figure>
+    <div class="block"><div class="prose"><h2>The problem</h2><p>Vacation, sick days and working from home were registered in different places, and keeping track of each employee's vacation balance across vacation years took manual work. Managers had no single overview of who was away, and what was waiting for their approval.</p></div></div>
+    <div class="block block--split"><figure class="figure"><button type="button" aria-label="Enlarge screenshot"><img src="../img/absence-home.webp" width="1508" height="1121" alt="Employee home page showing remaining vacation, work from home, sick days, sick child and leave for the current vacation year, with a chart of registrations by month." loading="lazy"></button><figcaption>An employee's home page for the current vacation year.</figcaption></figure><div class="prose"><h2>For employees</h2><ul><li>Register vacation, sick days, sick child, days off, leave and working from home</li><li>See the remaining vacation balance for the current vacation year at a glance</li><li>Follow the status of each registration and see the year's history by month</li><li>Sign in with their Microsoft work account, and get an email when a request is approved or declined</li></ul></div></div>
+    <div class="block block--split"><div class="prose"><h2>For managers</h2><ul><li>An overview of today's approved registrations and those waiting for approval</li><li>All registrations per employee and type in one chart and table</li><li>Approve or decline with one click – managers and HR are notified by email when something new comes in</li><li>Reports on attendance, registrations and vacation</li><li>Messages to the team on Slack straight from the app</li></ul></div><figure class="figure"><button type="button" aria-label="Enlarge screenshot"><img src="../img/absence-overview.webp" width="1511" height="1103" alt="Manager overview with today's approved registrations, waiting registrations, a Slack message box and a chart of all registrations per employee." loading="lazy"></button><figcaption>Manager overview.</figcaption></figure></div>
+    <div class="block block--split"><figure class="figure"><button type="button" aria-label="Enlarge screenshot"><img src="../img/absence-vacation.webp" width="1516" height="951" alt="Vacation management page listing each employee's vacation days, days spent and days left, with actions for new calendar year, new vacation year, custom transfer and bulk use of vacation." loading="lazy"></button><figcaption>Vacation management.</figcaption></figure><div class="prose"><h2>Vacation years</h2><p>The Danish vacation year runs from September to August, and balances have to be carried over correctly. The vacation management page handles that: starting a new vacation or calendar year, transferring days between years, and registering shared vacation days for everyone at once.</p><p>Danish public holidays are fetched automatically into the calendar, and the sixth vacation week is tracked separately from the statutory five.</p></div></div>
+    <div class="block"><div class="prose"><h2>How it's built</h2><p>A Django app on PostgreSQL, with role-based access so employees, project managers and HR each see what they should. Profile pictures and other uploads live in Azure Blob Storage.</p><p>It runs on Azure App Service with separate staging and production environments, and GitHub Actions deploys each one automatically.</p></div></div>
+    <nav class="next" aria-label="Projects"><a href="timetrack-powerbi.html">Previous: Time tracking report</a><a href="../#work">All work</a></nav>
   </main>
-
   <footer class="footer">
     <div class="wrap">© Andreas Gaardsted Vad</div>
   </footer>
-
   <dialog class="lightbox" aria-label="Screenshot">
     <form method="dialog"><button>Close</button></form>
     <img src="" alt="">

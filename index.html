@@ -3,47 +3,103 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Andreas Gaardsted Vad – Data &amp; BI analyst</title>
-  <meta name="description" content="Andreas Gaardsted Vad is a data and BI analyst building Power BI and Microsoft Fabric solutions: data models, API integrations, reports and apps.">
-  <meta property="og:title" content="Andreas Gaardsted Vad – Data & BI analyst">
-  <meta property="og:description" content="Power BI and Microsoft Fabric: data models, API integrations, reports and apps.">
+  <title>Andreas Gaardsted Vad – Data analyst and BI consultant</title>
+  <meta name="description" content="Andreas Gaardsted Vad builds data pipelines, Power BI models and business apps on Azure. Data analyst and BI consultant in Aarhus.">
+  <link rel="canonical" href="https://andgaa.github.io/">
+  <link rel="alternate" hreflang="en" href="https://andgaa.github.io/">
+  <link rel="alternate" hreflang="da" href="https://andgaa.github.io/da/">
+  <link rel="alternate" hreflang="x-default" href="https://andgaa.github.io/">
+  <meta property="og:title" content="Andreas Gaardsted Vad – Data analyst and BI consultant">
+  <meta property="og:description" content="Andreas Gaardsted Vad builds data pipelines, Power BI models and business apps on Azure. Data analyst and BI consultant in Aarhus.">
   <meta property="og:image" content="https://andgaa.github.io/img/andreas.webp">
   <meta property="og:type" content="website">
   <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;600;700;800&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&amp;display=swap">
   <link rel="stylesheet" href="css/site.css">
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
-
-  <header class="topbar">
-    <div class="wrap">
-      <a class="topbar__name" href="./">Andreas Gaardsted Vad</a>
-      <nav aria-label="Main">
-        <ul>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#work">Work</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
-
-  <main id="main">
-    <section class="hero">
+  <div class="band">
+    <header class="topbar">
       <div class="wrap">
+        <a class="topbar__name" href="./">Andreas Gaardsted Vad</a>
+        <nav aria-label="Main">
+          <ul>
+            <li><a href="#work">Work</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a class="lang" href="da/" hreflang="da" lang="da">Dansk</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <section class="hero wrap" aria-labelledby="name">
+      <div class="hero__grid">
         <div>
-          <h1>Andreas<br>Gaardsted Vad</h1>
-          <p class="hero__role">Data &amp; BI analyst building Power&nbsp;BI and Microsoft&nbsp;Fabric solutions</p>
-          <p class="hero__lede">I turn data from the systems a business already runs on – ClickUp, e‑conomic, in‑house apps – into models people trust and reports they actually open. I work across the whole chain: pulling data out of APIs, shaping it into semantic models, and building the reports, apps and Azure services on top.</p>
+          <h1 id="name">Andreas Gaardsted Vad</h1>
+          <p class="hero__claim">I build the pipelines, models and apps behind the numbers a business runs on.</p>
+          <p class="hero__meta">Data analyst and BI consultant in Aarhus. Microsoft Certified: Fabric Analytics Engineer Associate.</p>
           <ul class="actions">
-            <li><a class="btn btn--solid" href="mailto:andreasgaardsted@gmail.com">Email me</a></li>
+            <li><a class="btn btn--light" href="mailto:andreasgaardsted@gmail.com">Email me</a></li>
             <li><a class="btn" href="https://www.linkedin.com/in/andreas-gaardsted-vad/">LinkedIn</a></li>
           </ul>
         </div>
         <img class="hero__photo" src="img/andreas.webp" width="640" height="640" alt="Portrait of Andreas Gaardsted Vad">
+      </div>
+      <ol class="lineage" aria-label="What I build, from source to decision">
+        <li><b>Sources</b><span>ClickUp, e‑conomic and SharePoint</span></li>
+        <li><b>Collect</b><span>Python jobs on Azure Functions</span></li>
+        <li><b>Store</b><span>Parquet files in Azure Data Lake</span></li>
+        <li><b>Model</b><span>Power BI semantic models and DAX</span></li>
+        <li><b>Deliver</b><span>Reports, web apps and automated flows</span></li>
+      </ol>
+    </section>
+  </div>
+  <main id="main">
+    <section class="section" id="work" aria-labelledby="work-title">
+      <div class="wrap">
+        <div class="section__head">
+          <h2 id="work-title">Work</h2>
+          <p>Four tools I've built. The first three share one data flow: the sync pipeline collects the hours that the approval app and the Power BI report are built on. Screenshots use demo data or are anonymised.</p>
+        </div>
+        <article class="feature">
+          <a class="shot" href="projects/approval-app.html" tabindex="-1" aria-hidden="true"><img src="img/approval-project.webp" width="1600" height="1000" alt="" loading="lazy"></a>
+          <div class="feature__text">
+            <h3><a href="projects/approval-app.html">Approval and invoicing app</a></h3>
+            <p>Project managers approve each project's hours month by month and send them on to timesheets and draft invoices – prepaid hour packages included.</p>
+            <ul class="tags"><li>Python</li><li>Azure Functions</li><li>Table Storage</li><li>Power Automate</li></ul>
+            <a href="projects/approval-app.html">Read the case</a>
+          </div>
+        </article>
+        <ul class="rows">
+          <li class="row">
+            <a class="files" href="projects/clickup-sync.html" tabindex="-1" aria-hidden="true"><span>2026-08.parquet</span><span>2026-09.parquet</span><span>2026-10.parquet</span></a>
+            <div>
+              <h3><a href="projects/clickup-sync.html">ClickUp sync pipeline</a></h3>
+              <p>Copies time entries from ClickUp into one Parquet file per month, fetched in parallel, with locking and a log of every run.</p>
+            </div>
+            <p class="row__stack">Python, Azure Functions, Blob Storage, pandas, PyArrow</p>
+          </li>
+          <li class="row">
+            <a class="shot" href="projects/timetrack-powerbi.html" tabindex="-1" aria-hidden="true"><img src="img/timetrack-overview.webp" alt="" loading="lazy" width="1600" height="900"></a>
+            <div>
+              <h3><a href="projects/timetrack-powerbi.html">Time tracking report</a></h3>
+              <p>An 11-page Power BI report on hours, budgets, prepaid hours and invoicing, refreshed incrementally from the Data Lake.</p>
+            </div>
+            <p class="row__stack">Power BI, DAX, Power Query, PBIP in Git</p>
+          </li>
+          <li class="row">
+            <a class="shot" href="projects/absence-app.html" tabindex="-1" aria-hidden="true"><img src="img/absence-devices.webp" alt="" loading="lazy" width="1600" height="900"></a>
+            <div>
+              <h3><a href="projects/absence-app.html">Vacation and absence app</a></h3>
+              <p>Employees register time away, managers approve it, and vacation balances carry over correctly from year to year.</p>
+            </div>
+            <p class="row__stack">Python, Django, PostgreSQL, Azure App Service, GitHub Actions</p>
+          </li>
+        </ul>
       </div>
     </section>
 
@@ -51,141 +107,102 @@
       <div class="wrap">
         <div class="section__head">
           <h2 id="skills-title">Skills</h2>
-          <p>Laid out the way I'd lay out a Power BI model: the tools in the middle, the disciplines that connect to them around it.</p>
+          <p>Grouped by where they sit in the flow of data, from source to decision. Each one links to the project where I've used it.</p>
         </div>
-
-        <div class="model">
-          <svg class="model__links" aria-hidden="true"></svg>
-
-          <article class="table table--fact">
-            <h3><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><rect x="1.5" y="1.5" width="13" height="13" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M1.5 6h13M6 6v8.5" stroke="currentColor" stroke-width="1.5"/></svg>Tools</h3>
-            <ul>
-              <li><strong>Power BI</strong> – DAX, Power Query (M), interactive and KPI-driven reports</li>
-              <li><strong>Microsoft Fabric</strong> – lakehouses, warehouses, pipelines and notebooks</li>
-              <li><strong>Python</strong> – pandas, Polars, NumPy and PyArrow for data; Django and Azure Functions for apps and APIs</li>
-              <li><strong>Azure</strong> – Functions, App Service, Blob and Table Storage, PostgreSQL</li>
-              <li><strong>Power Platform</strong> – Power Apps and Power Automate for business processes</li>
-              <li><a href="https://learn.microsoft.com/api/credentials/share/en-us/AndreasGaardstedVad-6602/70CAC734A6191983?sharingId=DD96852B407B510C">Microsoft Certified: Fabric Analytics Engineer Associate</a></li>
-            </ul>
-          </article>
-
-          <article class="table table--dim">
-            <h3><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><rect x="1.5" y="1.5" width="13" height="13" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M1.5 6h13" stroke="currentColor" stroke-width="1.5"/></svg>Modeling &amp; architecture</h3>
-            <ul>
-              <li>Tabular models and data marts shaped around the questions the business asks</li>
-              <li>Reusable, governed semantic layers</li>
-              <li>Structured for both enterprise reporting and self-service</li>
-            </ul>
-          </article>
-
-          <article class="table table--dim">
-            <h3><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><rect x="1.5" y="1.5" width="13" height="13" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M1.5 6h13" stroke="currentColor" stroke-width="1.5"/></svg>Integration &amp; APIs</h3>
-            <ul>
-              <li>Data from e‑conomic, ClickUp and custom applications</li>
-              <li>API wrappers in Power Query, Python and Postman, with paging and staging</li>
-              <li>ETL/ELT pipelines between Fabric and the Azure data platform</li>
-            </ul>
-          </article>
-
-          <article class="table table--dim">
-            <h3><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><rect x="1.5" y="1.5" width="13" height="13" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M1.5 6h13" stroke="currentColor" stroke-width="1.5"/></svg>Governance</h3>
-            <ul>
-              <li>Standards for naming, calculations and security</li>
-              <li>Row- and object-level security and workspace governance</li>
-              <li>Certified datasets with lifecycle documentation</li>
-            </ul>
-          </article>
-
-          <article class="table table--dim">
-            <h3><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><rect x="1.5" y="1.5" width="13" height="13" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M1.5 6h13" stroke="currentColor" stroke-width="1.5"/></svg>Performance</h3>
-            <ul>
-              <li>Faster dataset refresh</li>
-              <li>Lean models and visuals that respond quickly</li>
-              <li>Best practice for large analytical models</li>
-            </ul>
-          </article>
+        <div class="skills">
+        <section class="stage" aria-labelledby="stage-1">
+          <div class="stage__head"><span class="stage__num" aria-hidden="true">1</span><h3 id="stage-1">Collect</h3></div>
+          <p>Getting data out of the systems a business already runs on.</p>
+          <ul>
+              <li><strong>REST APIs</strong><span>ClickUp and e‑conomic, with paging, retries and staging</span><span class="chips"><a class="tag" href="projects/clickup-sync.html">Sync pipeline</a><a class="tag" href="projects/timetrack-powerbi.html">Time report</a></span></li>
+              <li><strong>Python</strong><span>pandas, PyArrow and requests for extraction and reshaping</span><span class="chips"><a class="tag" href="projects/clickup-sync.html">Sync pipeline</a><a class="tag" href="projects/approval-app.html">Approval app</a></span></li>
+              <li><strong>Azure Functions</strong><span>On-demand jobs with locking, freshness checks and run logs</span><span class="chips"><a class="tag" href="projects/clickup-sync.html">Sync pipeline</a><a class="tag" href="projects/approval-app.html">Approval app</a></span></li>
+              <li><strong>Power Query (M)</strong><span>Custom API connectors and transformations</span><span class="chips"><a class="tag" href="projects/timetrack-powerbi.html">Time report</a></span></li>
+          </ul>
+        </section>
+        <section class="stage" aria-labelledby="stage-2">
+          <div class="stage__head"><span class="stage__num" aria-hidden="true">2</span><h3 id="stage-2">Store</h3></div>
+          <p>Keeping data in a shape that is fast and cheap to read.</p>
+          <ul>
+              <li><strong>Parquet in Azure Data Lake</strong><span>Monthly partitions, one file per month, rewritten only when they change</span><span class="chips"><a class="tag" href="projects/clickup-sync.html">Sync pipeline</a><a class="tag" href="projects/timetrack-powerbi.html">Time report</a></span></li>
+              <li><strong>PostgreSQL</strong><span>Relational models with constraints for HR and vacation data</span><span class="chips"><a class="tag" href="projects/absence-app.html">HR app</a></span></li>
+              <li><strong>Azure Table and Blob Storage</strong><span>App state, caches and uploads</span><span class="chips"><a class="tag" href="projects/approval-app.html">Approval app</a><a class="tag" href="projects/absence-app.html">HR app</a></span></li>
+          </ul>
+        </section>
+        <section class="stage" aria-labelledby="stage-3">
+          <div class="stage__head"><span class="stage__num" aria-hidden="true">3</span><h3 id="stage-3">Model</h3></div>
+          <p>Turning raw tables into numbers people trust.</p>
+          <ul>
+              <li><strong>Power BI semantic models</strong><span>Bridge tables, a shared calendar and sources joined across systems</span><span class="chips"><a class="tag" href="projects/timetrack-powerbi.html">Time report</a></span></li>
+              <li><strong>DAX</strong><span>Around 160 measures for budgets, billing and prepaid hours</span><span class="chips"><a class="tag" href="projects/timetrack-powerbi.html">Time report</a></span></li>
+              <li><strong>Incremental refresh and security</strong><span>Reload only recent data; each person sees what they should</span><span class="chips"><a class="tag" href="projects/timetrack-powerbi.html">Time report</a></span></li>
+              <li><strong>PBIP in Git</strong><span>The model and every measure versioned as code</span><span class="chips"><a class="tag" href="projects/timetrack-powerbi.html">Time report</a></span></li>
+          </ul>
+        </section>
+        <section class="stage" aria-labelledby="stage-4">
+          <div class="stage__head"><span class="stage__num" aria-hidden="true">4</span><h3 id="stage-4">Deliver</h3></div>
+          <p>Putting the numbers where decisions are made.</p>
+          <ul>
+              <li><strong>Power BI reports</strong><span>An 11-page report for project managers and leadership</span><span class="chips"><a class="tag" href="projects/timetrack-powerbi.html">Time report</a></span></li>
+              <li><strong>Web apps</strong><span>Django and Azure Functions apps with Microsoft sign-in</span><span class="chips"><a class="tag" href="projects/absence-app.html">HR app</a><a class="tag" href="projects/approval-app.html">Approval app</a></span></li>
+              <li><strong>Power Automate</strong><span>Flows that create timesheets and draft invoices</span><span class="chips"><a class="tag" href="projects/approval-app.html">Approval app</a><a class="tag" href="projects/timetrack-powerbi.html">Time report</a></span></li>
+              <li><strong>CI/CD</strong><span>GitHub Actions deploying to Azure, staging and production</span><span class="chips"><a class="tag" href="projects/absence-app.html">HR app</a></span></li>
+          </ul>
+        </section>
+        </div>
+        <div class="cert">
+          <div><strong>Microsoft Certified: Fabric Analytics Engineer Associate</strong><span>Lakehouses, warehouses, pipelines and notebooks in Microsoft Fabric.</span></div>
+          <a class="btn" href="https://learn.microsoft.com/api/credentials/share/en-us/AndreasGaardstedVad-6602/70CAC734A6191983?sharingId=DD96852B407B510C">View credential</a>
         </div>
       </div>
     </section>
 
-    <section class="section" id="work" aria-labelledby="work-title">
-      <div class="wrap">
-        <div class="section__head">
-          <h2 id="work-title">Selected work</h2>
-          <p>The first three work together: the sync pipeline collects the data that both the approval app and the Power BI report are built on. Names and figures in the screenshots are anonymised or demo data.</p>
+    <section class="section section--white" id="about" aria-labelledby="about-title">
+      <div class="wrap about">
+        <div class="about__intro">
+          <h2 id="about-title">About</h2>
+          <p>I started out in the Microsoft Power Platform – Power BI, Power Automate and Power Apps – and have moved steadily towards Python, building the pipelines and apps that the reports depend on.</p><p>Before data, I took a master's in applied philosophy, specialising in organisational and dialogue philosophy. It shows in how I work: I start by asking what people actually need to know.</p>
+          <div>
+            <h3>What I enjoy most</h3>
+            <ul><li>Automating complex business processes</li><li>Reporting that people use to make decisions</li><li>Business apps that are easy to use</li></ul>
+          </div>
         </div>
-
-        <div class="work">
-          <article class="work__item">
-            <a class="work__shot" href="projects/approval-app.html" tabindex="-1" aria-hidden="true">
-              <img src="img/approval-project.webp" width="1600" height="1000" alt="" loading="lazy">
-            </a>
+        <div>
+          <h3 class="sub">Experience</h3>
+          <ol class="jobs">
+          <li><span class="when">2022 – now</span><div><strong>Data analyst</strong><span>illumi, Aarhus</span><p>Power BI reports and dashboards, ETL in Fabric and in Python on Azure Functions, and business applications in Django.</p></div></li>
+          <li><span class="when">2021 – 2022</span><div><strong>Digital consultant</strong><span>illumi, Aarhus</span></div></li>
+          <li><span class="when">2020 – 2023</span><div><strong>Power BI and communications consultant</strong><span>Vanebrudspalæet, Aarhus</span></div></li>
+          <li><span class="when">2020 – 2021</span><div><strong>Founder</strong><span>Forstå Din Rådgiver</span></div></li>
+          <li><span class="when">2018 – 2020</span><div><strong>Digital marketing</strong><span>Kognitiv Terapi Center Århus</span><p>Communications intern, then digital marketing.</p></div></li>
+          </ol>
+          <div class="facts-2">
             <div>
-              <h3><a href="projects/approval-app.html">Approval and invoicing app</a></h3>
-              <ul class="tags"><li>Python</li><li>Azure Functions</li><li>Table Storage</li><li>Power Automate</li><li>e‑conomic</li></ul>
-              <p>A web app where project managers approve each project's hours month by month and send them on to timesheets and draft invoices – including prepaid hour packages.</p>
-              <a href="projects/approval-app.html">Read the case</a>
+              <h3>Education</h3>
+            <p><strong>MA, Applied Philosophy</strong><br>Organisational and dialogue philosophy<br><span class="muted">Aalborg University, 2017 – 2019</span></p>
+            <p><strong>BA, Applied Philosophy</strong><br><span class="muted">Aalborg University, 2014 – 2017</span></p>
             </div>
-          </article>
-
-          <article class="work__item">
-            <a class="work__shot" href="projects/clickup-sync.html" tabindex="-1" aria-hidden="true">
-              <img src="img/pipeline.svg" width="1200" height="560" alt="" loading="lazy">
-            </a>
             <div>
-              <h3><a href="projects/clickup-sync.html">ClickUp sync pipeline</a></h3>
-              <ul class="tags"><li>Python</li><li>Azure Functions</li><li>Blob Storage</li><li>Parquet</li><li>pandas</li></ul>
-              <p>An Azure Function that copies time entries from ClickUp into monthly Parquet files, in parallel, with locking and a log of every run – so nothing downstream has to call the API.</p>
-              <a href="projects/clickup-sync.html">Read the case</a>
+              <h3>Languages</h3>
+              <p>Danish <span class="muted">– native</span><br>English <span class="muted">– professional working</span></p>
             </div>
-          </article>
-
-          <article class="work__item">
-            <a class="work__shot" href="projects/timetrack-powerbi.html" tabindex="-1" aria-hidden="true">
-              <img src="img/timetrack-overview.webp" width="1600" height="902" alt="" loading="lazy">
-            </a>
-            <div>
-              <h3><a href="projects/timetrack-powerbi.html">Time tracking report</a></h3>
-              <ul class="tags"><li>Power BI</li><li>DAX</li><li>Power Query (M)</li><li>Azure Data Lake</li><li>Incremental refresh</li></ul>
-              <p>A Power BI report that shows where project hours go – billable versus unbillable, budgets, prepaid hours and invoicing – built on ClickUp and e‑conomic data from the sync pipeline.</p>
-              <a href="projects/timetrack-powerbi.html">Read the case</a>
-            </div>
-          </article>
-
-          <article class="work__item">
-            <a class="work__shot" href="projects/absence-app.html" tabindex="-1" aria-hidden="true">
-              <img src="img/absence-devices.webp" width="1536" height="894" alt="" loading="lazy">
-            </a>
-            <div>
-              <h3><a href="projects/absence-app.html">Vacation and absence app</a></h3>
-              <ul class="tags"><li>Python</li><li>Django</li><li>PostgreSQL</li><li>Azure App Service</li><li>Slack</li></ul>
-              <p>One place for employees to register vacation, sick days and working from home, and for managers to approve requests and keep vacation balances right from year to year.</p>
-              <a href="projects/absence-app.html">Read the case</a>
-            </div>
-          </article>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="section contact" id="contact" aria-labelledby="contact-title">
-      <div class="wrap">
-        <div class="section__head">
-          <h2 id="contact-title">Get in touch</h2>
-          <p>I'm open to new roles in data and BI. Email is the quickest way to reach me.</p>
-        </div>
+    <section class="band" id="contact" aria-labelledby="contact-title">
+      <div class="wrap contact">
+        <h2 id="contact-title">Let's talk</h2>
+        <p>I'm open to new roles in data and BI. Email is the quickest way to reach me.</p>
         <a class="contact__mail" href="mailto:andreasgaardsted@gmail.com">andreasgaardsted@gmail.com</a>
-        <ul>
-          <li><a href="https://www.linkedin.com/in/andreas-gaardsted-vad/">LinkedIn</a></li>
-          <li><a href="https://github.com/AndGaa">GitHub</a></li>
-        </ul>
+        <ul><li><a href="https://www.linkedin.com/in/andreas-gaardsted-vad/">LinkedIn</a></li><li><a href="https://github.com/AndGaa">GitHub</a></li></ul>
       </div>
     </section>
   </main>
-
   <footer class="footer">
     <div class="wrap">© Andreas Gaardsted Vad</div>
   </footer>
 
-  <script src="js/site.js" defer></script>
 </body>
 </html>
