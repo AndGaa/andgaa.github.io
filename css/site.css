@@ -135,7 +135,7 @@ p { margin: 0; }
 
 /* Tools */
 .section--tools { border-top: 1px solid var(--line); }
-.tools { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr)); gap: 0 2.5rem; }
+.tools { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr)); gap: 0 2.5rem; }
 .tools li { display: grid; align-content: start; gap: .25rem; padding-block: 1.25rem; border-top: 2px solid var(--ink); }
 .tools strong { font-size: 1.6rem; line-height: 1.15; letter-spacing: -.015em; }
 .tools span { color: var(--muted); }
