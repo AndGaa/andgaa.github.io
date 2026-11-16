@@ -2,66 +2,12 @@
 <html lang="da">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>ClickUp-synkronisering – Andreas Gaardsted Vad</title>
-  <meta name="description" content="En Azure Function i Python, der kopierer tidsregistreringer fra ClickUp til månedlige Parquet-filer i Azure Blob Storage.">
-  <link rel="canonical" href="https://andgaa.github.io/da/projects/clickup-sync.html">
-  <link rel="alternate" hreflang="en" href="https://andgaa.github.io/projects/clickup-sync.html">
-  <link rel="alternate" hreflang="da" href="https://andgaa.github.io/da/projects/clickup-sync.html">
-  <link rel="alternate" hreflang="x-default" href="https://andgaa.github.io/projects/clickup-sync.html">
-  <meta property="og:title" content="ClickUp-synkronisering – Andreas Gaardsted Vad">
-  <meta property="og:description" content="En Azure Function i Python, der kopierer tidsregistreringer fra ClickUp til månedlige Parquet-filer i Azure Blob Storage.">
-  <meta property="og:image" content="https://andgaa.github.io/img/andreas.webp">
-  <meta property="og:type" content="website">
-  <link rel="icon" href="../../img/favicon.svg" type="image/svg+xml">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&amp;display=swap">
-  <link rel="stylesheet" href="../../css/site.css">
+  <title>Flyttet – Andreas Gaardsted Vad</title>
+  <link rel="canonical" href="https://andgaa.github.io/projects/clickup-sync.html">
+  <meta name="robots" content="noindex">
+  <meta http-equiv="refresh" content="0; url=/projects/clickup-sync.html">
 </head>
 <body>
-  <a class="skip" href="#main">Gå til indhold</a>
-  <div class="band">
-    <header class="topbar">
-      <div class="wrap">
-        <a class="topbar__name" href="../../da/">Andreas Gaardsted Vad</a>
-        <nav aria-label="Hovedmenu">
-          <ul>
-            <li><a href="../../da/#work">Arbejde</a></li>
-            <li><a href="../../da/#skills">Kompetencer</a></li>
-            <li><a href="../../da/#about">Om mig</a></li>
-            <li><a href="../../da/#contact">Kontakt</a></li>
-            <li><a class="lang" href="../../projects/clickup-sync.html" hreflang="en" lang="en">English</a></li>
-          </ul>
-        </nav>
-      </div>
-    </header>
-    <section class="project-hero wrap" aria-labelledby="title">
-      <a class="crumb" href="../#work">← Alt arbejde</a>
-      <h1 id="title">ClickUp-synkronisering</h1>
-      <p class="lede">En Azure Function, der kopierer tidsregistreringer fra ClickUp til Parquet-filer måned for måned, så rapporter og apps aldrig selv skal kalde API'et.</p>
-      <dl class="facts">
-        <div><dt>Stack</dt><dd>Python, Azure Functions, Azure Blob Storage</dd></div>
-        <div><dt>Biblioteker</dt><dd>pandas, PyArrow, requests</dd></div>
-        <div><dt>Kilde</dt><dd>ClickUp API</dd></div>
-        <div><dt>Kompetencer</dt><dd>Data engineering, API-integration, driftssikkerhed</dd></div>
-      </dl>
-    </section>
-  </div>
-  <main id="main" class="wrap project">
-    <figure class="figure"><img src="../../img/pipeline.svg" width="1200" height="560" alt="Diagram: Tidsregistreringer går fra ClickUp-API'et til en Azure Function, der tjekker om data er friske og tager en lås, deler perioden op i måneder, henter dem parallelt og skriver én Parquet-fil pr. måned plus kørselsdata til Blob Storage. Power BI-rapporten og godkendelsesappen læser derfra."><figcaption>Sådan kører en synkronisering (diagrammet er på engelsk).</figcaption></figure>
-    <div class="block"><div class="prose"><h2>Problemet</h2><p>Flere værktøjer skulle bruge de samme tidsregistreringer fra ClickUp: Power BI-timerapporten og senere godkendelsesappen. At hente dem direkte fra API'et hver gang var langsomt, ramte API'ets grænser og betød, at hvert værktøj skulle løse det samme problem.</p><p>Pipelinen henter data én gang, gemmer dem i et format, der er let at analysere, og lader alt nedstrøms læse derfra i stedet.</p></div></div>
-    <div class="block block--split"><div class="prose"><h2>Sådan virker den</h2><ul><li>Tre opdateringsstrategier: de seneste 12 måneder, et valgfrit interval af måneder eller en fuld genindlæsning af hele historikken</li><li>Perioden deles i månedspartitioner, så en almindelig kørsel kun skriver de måneder igen, der stadig kan ændre sig</li><li>Månederne hentes parallelt af en lille pulje workers, så kørslerne er korte uden at overbelaste API'et</li><li>Hver måned normaliseres med pandas og skrives som sin egen Parquet-fil i Blob Storage</li></ul></div><div class="prose"><h2>Bygget til at køre af sig selv</h2><ul><li>Et friskhedstjek springer kørslen over, hvis data lige er blevet synkroniseret</li><li>En lås i Blob Storage forhindrer to synkroniseringer i at køre samtidig, og gamle låse fra nedbrudte kørsler ryddes automatisk</li><li>Hver kørsel skriver sit resultat – rækker pr. måned, varighed, antal workers, fejl og hvad der startede den – til en seneste-kørsel-fil og en historiklog</li><li>Et status-endpoint fortæller om seneste kørsel, så andre værktøjer kan tjekke, før de læser</li></ul></div></div>
-    <div class="block"><div class="prose"><h2>Opbygning</h2><p>En koordinator styrer synkroniseringen og uddelegerer til små services med hver sin opgave: partitionering, hentning fra ClickUp, skrivning af Parquet, kørselsdata og låsning. Konfigurationen kommer fra miljøvariabler, så den samme kode kører lokalt og i Azure.</p></div></div>
-    <nav class="next" aria-label="Projekter"><a href="approval-app.html">Forrige: App til godkendelse og fakturering</a><a href="timetrack-powerbi.html">Næste: Timerapport</a></nav>
-  </main>
-  <footer class="footer">
-    <div class="wrap">© Andreas Gaardsted Vad</div>
-  </footer>
-  <dialog class="lightbox" aria-label="Skærmbillede">
-    <form method="dialog"><button>Luk</button></form>
-    <img src="" alt="">
-  </dialog>
-  <script src="../../js/site.js" defer></script>
+  <p>Siden er flyttet til <a href="/projects/clickup-sync.html">andgaa.github.io/projects/clickup-sync.html</a>.</p>
 </body>
 </html>

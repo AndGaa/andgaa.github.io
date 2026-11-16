@@ -1,16 +1,16 @@
 <!doctype html>
-<html lang="en">
+<html lang="da">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Approval and invoicing app – Andreas Gaardsted Vad</title>
-  <meta name="description" content="A web app on Azure Functions where project managers approve hours per project and month and send them on to timesheets and invoices.">
+  <title>App til godkendelse og fakturering – Andreas Gaardsted Vad</title>
+  <meta name="description" content="En webapp på Azure Functions, hvor projektledere godkender timer pr. projekt og måned og sender dem videre til timesedler og fakturaer.">
   <link rel="canonical" href="https://andgaa.github.io/projects/approval-app.html">
-  <link rel="alternate" hreflang="en" href="https://andgaa.github.io/projects/approval-app.html">
-  <link rel="alternate" hreflang="da" href="https://andgaa.github.io/da/projects/approval-app.html">
+  <link rel="alternate" hreflang="en" href="https://andgaa.github.io/en/projects/approval-app.html">
+  <link rel="alternate" hreflang="da" href="https://andgaa.github.io/projects/approval-app.html">
   <link rel="alternate" hreflang="x-default" href="https://andgaa.github.io/projects/approval-app.html">
-  <meta property="og:title" content="Approval and invoicing app – Andreas Gaardsted Vad">
-  <meta property="og:description" content="A web app on Azure Functions where project managers approve hours per project and month and send them on to timesheets and invoices.">
+  <meta property="og:title" content="App til godkendelse og fakturering – Andreas Gaardsted Vad">
+  <meta property="og:description" content="En webapp på Azure Functions, hvor projektledere godkender timer pr. projekt og måned og sender dem videre til timesedler og fakturaer.">
   <meta property="og:image" content="https://andgaa.github.io/img/andreas.webp">
   <meta property="og:type" content="website">
   <link rel="icon" href="../img/favicon.svg" type="image/svg+xml">
@@ -20,46 +20,46 @@
   <link rel="stylesheet" href="../css/site.css">
 </head>
 <body>
-  <a class="skip" href="#main">Skip to content</a>
+  <a class="skip" href="#main">Gå til indhold</a>
   <div class="band">
     <header class="topbar">
       <div class="wrap">
         <a class="topbar__name" href="../">Andreas Gaardsted Vad</a>
-        <nav aria-label="Main">
+        <nav aria-label="Hovedmenu">
           <ul>
-            <li><a href="../#work">Work</a></li>
-            <li><a href="../#skills">Skills</a></li>
-            <li><a href="../#about">About</a></li>
-            <li><a href="../#contact">Contact</a></li>
-            <li><a class="lang" href="../da/projects/approval-app.html" hreflang="da" lang="da">Dansk</a></li>
+            <li><a href="../#work">Arbejde</a></li>
+            <li><a href="../#skills">Kompetencer</a></li>
+            <li><a href="../#about">Erfaring</a></li>
+            <li><a href="../#contact">Kontakt</a></li>
+            <li><a class="lang" href="../en/projects/approval-app.html" hreflang="en" lang="en">English</a></li>
           </ul>
         </nav>
       </div>
     </header>
     <section class="project-hero wrap" aria-labelledby="title">
-      <a class="crumb" href="../#work">← All work</a>
-      <h1 id="title">Approval and invoicing app</h1>
-      <p class="lede">A web app where project managers approve each project's hours month by month and send them on to timesheets and invoices.</p>
+      <a class="crumb" href="../#work">← Alt arbejde</a>
+      <h1 id="title">App til godkendelse og fakturering</h1>
+      <p class="lede">En webapp, hvor projektledere godkender hvert projekts timer måned for måned og sender dem videre til timesedler og fakturaer.</p>
       <dl class="facts">
         <div><dt>Stack</dt><dd>Python, Azure Functions, Jinja, JavaScript</dd></div>
-        <div><dt>Storage</dt><dd>Azure Table Storage, Blob Storage</dd></div>
-        <div><dt>Integrations</dt><dd>ClickUp, Power Automate, e‑conomic</dd></div>
-        <div><dt>Skills</dt><dd>Full-stack development, process design, data modeling</dd></div>
+        <div><dt>Lagring</dt><dd>Azure Table Storage, Blob Storage</dd></div>
+        <div><dt>Integrationer</dt><dd>ClickUp, Power Automate, e‑conomic</dd></div>
+        <div><dt>Kompetencer</dt><dd>Fullstack-udvikling, procesdesign, datamodellering</dd></div>
       </dl>
     </section>
   </div>
   <main id="main" class="wrap project">
-    <figure class="figure"><button type="button" aria-label="Enlarge screenshot"><img src="../img/approval-project.webp" width="1600" height="1000" alt="A project opened in the approval app: budget hours, hourly rate, three monthly approvals with their status, and a prepaid hour package."></button><figcaption>A project with its monthly approvals and a prepaid hour package. Demo data.</figcaption></figure>
-    <div class="block"><div class="prose"><h2>The problem</h2><p>Every month, the hours logged in ClickUp have to be checked, approved and invoiced – project by project. Projects follow different rules: hourly rates, budgets, prepaid hour packages, and customers who want a timesheet with their invoice. Doing that by hand across many projects took time and was easy to get wrong.</p></div></div>
-    <div class="block block--split"><div class="prose"><h2>How it works</h2><ul><li>For each project and month, the app builds an approval from the time entries the <a href="clickup-sync.html">sync pipeline</a> stores, combined with project data from ClickUp</li><li>Project managers approve the hours, adjust how many to invoice and add a comment</li><li>Each approval moves through clear statuses, from pending and ready to approved, sent to a draft invoice and invoiced</li><li>Several months can be combined into one invoice or one timesheet</li><li>Prepaid hour packages are synced from ClickUp and invoiced on their own</li></ul></div><div class="prose"><h2>Connected to the rest</h2><ul><li>Approving, invoicing and sending timesheets trigger Power Automate flows, which create the timesheets and draft invoices</li><li>If a flow fails, the approval is left unchanged and the user gets a clear error, so nothing is invoiced twice or lost</li><li>Project details such as customer, product and invoice text travel with each project, so invoices come out right</li></ul></div></div>
-    <div class="block block--split"><figure class="figure"><button type="button" aria-label="Enlarge screenshot"><img src="../img/approval-list.webp" width="1440" height="900" alt="The project list with search, a status filter and, for each project, ready approvals, total approvals and prepaids." loading="lazy"></button><figcaption>The project list, with search and a status filter. Demo data.</figcaption></figure><div class="prose"><h2>Architecture</h2><p>One Azure Function app serves both the API and the interface: a Jinja template with plain JavaScript on the front end, and HTTP endpoints behind it.</p><p>The code is split into repositories over Azure Table Storage, services for each workflow, and a small JSON cache in Blob Storage that keeps the app quick and can be refreshed on demand.</p></div></div>
-    <nav class="next" aria-label="Projects"><a href="../#work">All work</a><a href="clickup-sync.html">Next: ClickUp sync pipeline</a></nav>
+    <figure class="figure"><button type="button" aria-label="Forstør skærmbillede"><img src="../img/approval-project.webp" width="1600" height="1000" alt="Et projekt åbnet i godkendelsesappen: budgettimer, timepris, tre månedlige godkendelser med status og et klippekort."></button><figcaption>Et projekt med dets månedlige godkendelser og et klippekort. Demodata.</figcaption></figure>
+    <div class="block"><div class="prose"><h2>Problemet</h2><p>Hver måned skal de timer, der er registreret i ClickUp, tjekkes, godkendes og faktureres – projekt for projekt. Projekterne følger forskellige regler: timepriser, budgetter, klippekort og kunder, der vil have en timeseddel med fakturaen. At gøre det i hånden på tværs af mange projekter tog tid og gav plads til fejl.</p></div></div>
+    <div class="block block--split"><div class="prose"><h2>Sådan virker den</h2><ul><li>For hvert projekt og hver måned bygger appen en godkendelse ud fra de tidsregistreringer, <a href="clickup-sync.html">synkroniseringen</a> gemmer, kombineret med projektdata fra ClickUp</li><li>Projektlederen godkender timerne, justerer hvor mange der skal faktureres og tilføjer en kommentar</li><li>Hver godkendelse går gennem tydelige statusser: afventer, klar, godkendt, sendt til fakturakladde og faktureret</li><li>Flere måneder kan samles i én faktura eller én timeseddel</li><li>Klippekort synkroniseres fra ClickUp og faktureres for sig</li></ul></div><div class="prose"><h2>Koblet til resten</h2><ul><li>Godkendelse, fakturering og afsendelse af timesedler starter Power Automate-flows, der laver timesedler og fakturakladder</li><li>Fejler et flow, forbliver godkendelsen uændret, og brugeren får en klar fejlbesked – så intet faktureres to gange eller går tabt</li><li>Projektoplysninger som kunde, produkt og fakturatekst følger med hvert projekt, så fakturaerne bliver rigtige</li></ul></div></div>
+    <div class="block block--split"><figure class="figure"><button type="button" aria-label="Forstør skærmbillede"><img src="../img/approval-list.webp" width="1440" height="900" alt="Projektlisten med søgning, statusfilter og for hvert projekt antal klar-godkendelser, godkendelser i alt og klippekort." loading="lazy"></button><figcaption>Projektlisten med søgning og statusfilter. Demodata.</figcaption></figure><div class="prose"><h2>Arkitektur</h2><p>Én Azure Function-app leverer både API og brugerflade: en Jinja-skabelon med ren JavaScript i frontenden og HTTP-endpoints bagved.</p><p>Koden er delt i repositories oven på Azure Table Storage, services for hvert workflow og en lille JSON-cache i Blob Storage, der holder appen hurtig og kan opdateres efter behov.</p></div></div>
+    <nav class="next" aria-label="Projekter"><a href="../#work">Alt arbejde</a><a href="clickup-sync.html">Næste: ClickUp-synkronisering</a></nav>
   </main>
   <footer class="footer">
     <div class="wrap">© Andreas Gaardsted Vad</div>
   </footer>
-  <dialog class="lightbox" aria-label="Screenshot">
-    <form method="dialog"><button>Close</button></form>
+  <dialog class="lightbox" aria-label="Skærmbillede">
+    <form method="dialog"><button>Luk</button></form>
     <img src="" alt="">
   </dialog>
   <script src="../js/site.js" defer></script>

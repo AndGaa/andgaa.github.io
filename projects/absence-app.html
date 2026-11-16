@@ -1,16 +1,16 @@
 <!doctype html>
-<html lang="en">
+<html lang="da">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Vacation and absence app – Andreas Gaardsted Vad</title>
-  <meta name="description" content="A Django app on Azure for registering and approving vacation, sick days and working from home, with vacation balances managed year to year.">
+  <title>Ferie- og fraværsapp – Andreas Gaardsted Vad</title>
+  <meta name="description" content="En Django-app på Azure til registrering og godkendelse af ferie, sygdom og hjemmearbejde, med feriesaldi der føres fra år til år.">
   <link rel="canonical" href="https://andgaa.github.io/projects/absence-app.html">
-  <link rel="alternate" hreflang="en" href="https://andgaa.github.io/projects/absence-app.html">
-  <link rel="alternate" hreflang="da" href="https://andgaa.github.io/da/projects/absence-app.html">
+  <link rel="alternate" hreflang="en" href="https://andgaa.github.io/en/projects/absence-app.html">
+  <link rel="alternate" hreflang="da" href="https://andgaa.github.io/projects/absence-app.html">
   <link rel="alternate" hreflang="x-default" href="https://andgaa.github.io/projects/absence-app.html">
-  <meta property="og:title" content="Vacation and absence app – Andreas Gaardsted Vad">
-  <meta property="og:description" content="A Django app on Azure for registering and approving vacation, sick days and working from home, with vacation balances managed year to year.">
+  <meta property="og:title" content="Ferie- og fraværsapp – Andreas Gaardsted Vad">
+  <meta property="og:description" content="En Django-app på Azure til registrering og godkendelse af ferie, sygdom og hjemmearbejde, med feriesaldi der føres fra år til år.">
   <meta property="og:image" content="https://andgaa.github.io/img/andreas.webp">
   <meta property="og:type" content="website">
   <link rel="icon" href="../img/favicon.svg" type="image/svg+xml">
@@ -20,48 +20,48 @@
   <link rel="stylesheet" href="../css/site.css">
 </head>
 <body>
-  <a class="skip" href="#main">Skip to content</a>
+  <a class="skip" href="#main">Gå til indhold</a>
   <div class="band">
     <header class="topbar">
       <div class="wrap">
         <a class="topbar__name" href="../">Andreas Gaardsted Vad</a>
-        <nav aria-label="Main">
+        <nav aria-label="Hovedmenu">
           <ul>
-            <li><a href="../#work">Work</a></li>
-            <li><a href="../#skills">Skills</a></li>
-            <li><a href="../#about">About</a></li>
-            <li><a href="../#contact">Contact</a></li>
-            <li><a class="lang" href="../da/projects/absence-app.html" hreflang="da" lang="da">Dansk</a></li>
+            <li><a href="../#work">Arbejde</a></li>
+            <li><a href="../#skills">Kompetencer</a></li>
+            <li><a href="../#about">Erfaring</a></li>
+            <li><a href="../#contact">Kontakt</a></li>
+            <li><a class="lang" href="../en/projects/absence-app.html" hreflang="en" lang="en">English</a></li>
           </ul>
         </nav>
       </div>
     </header>
     <section class="project-hero wrap" aria-labelledby="title">
-      <a class="crumb" href="../#work">← All work</a>
-      <h1 id="title">Vacation and absence app</h1>
-      <p class="lede">One place for employees to register time away and for managers to approve it and keep vacation balances right.</p>
+      <a class="crumb" href="../#work">← Alt arbejde</a>
+      <h1 id="title">Ferie- og fraværsapp</h1>
+      <p class="lede">Ét sted, hvor medarbejdere registrerer fravær, og ledere godkender det og holder styr på feriesaldiene.</p>
       <dl class="facts">
         <div><dt>Stack</dt><dd>Python, Django, PostgreSQL</dd></div>
         <div><dt>Hosting</dt><dd>Azure App Service, Blob Storage, GitHub Actions</dd></div>
-        <div><dt>Integrations</dt><dd>Microsoft sign-in, Slack, email</dd></div>
-        <div><dt>Users</dt><dd>Employees, managers and HR – on desktop, tablet and phone</dd></div>
+        <div><dt>Integrationer</dt><dd>Microsoft-login, Slack, mail</dd></div>
+        <div><dt>Brugere</dt><dd>Medarbejdere, ledere og HR – på computer, tablet og telefon</dd></div>
       </dl>
     </section>
   </div>
   <main id="main" class="wrap project">
-    <figure class="figure"><button type="button" aria-label="Enlarge screenshot"><img src="../img/absence-devices.webp" width="1536" height="894" alt="The app shown on a laptop, a tablet and a phone."></button><figcaption>The same app on desktop, tablet and phone. Logo and colleagues' names are blurred.</figcaption></figure>
-    <div class="block"><div class="prose"><h2>The problem</h2><p>Vacation, sick days and working from home were registered in different places, and keeping track of each employee's vacation balance across vacation years took manual work. Managers had no single overview of who was away, and what was waiting for their approval.</p></div></div>
-    <div class="block block--split"><figure class="figure"><button type="button" aria-label="Enlarge screenshot"><img src="../img/absence-home.webp" width="1508" height="1121" alt="Employee home page showing remaining vacation, work from home, sick days, sick child and leave for the current vacation year, with a chart of registrations by month." loading="lazy"></button><figcaption>An employee's home page for the current vacation year.</figcaption></figure><div class="prose"><h2>For employees</h2><ul><li>Register vacation, sick days, sick child, days off, leave and working from home</li><li>See the remaining vacation balance for the current vacation year at a glance</li><li>Follow the status of each registration and see the year's history by month</li><li>Sign in with their Microsoft work account, and get an email when a request is approved or declined</li></ul></div></div>
-    <div class="block block--split"><div class="prose"><h2>For managers</h2><ul><li>An overview of today's approved registrations and those waiting for approval</li><li>All registrations per employee and type in one chart and table</li><li>Approve or decline with one click – managers and HR are notified by email when something new comes in</li><li>Reports on attendance, registrations and vacation</li><li>Messages to the team on Slack straight from the app</li></ul></div><figure class="figure"><button type="button" aria-label="Enlarge screenshot"><img src="../img/absence-overview.webp" width="1511" height="1103" alt="Manager overview with today's approved registrations, waiting registrations, a Slack message box and a chart of all registrations per employee." loading="lazy"></button><figcaption>Manager overview.</figcaption></figure></div>
-    <div class="block block--split"><figure class="figure"><button type="button" aria-label="Enlarge screenshot"><img src="../img/absence-vacation.webp" width="1516" height="951" alt="Vacation management page listing each employee's vacation days, days spent and days left, with actions for new calendar year, new vacation year, custom transfer and bulk use of vacation." loading="lazy"></button><figcaption>Vacation management.</figcaption></figure><div class="prose"><h2>Vacation years</h2><p>The Danish vacation year runs from September to August, and balances have to be carried over correctly. The vacation management page handles that: starting a new vacation or calendar year, transferring days between years, and registering shared vacation days for everyone at once.</p><p>Danish public holidays are fetched automatically into the calendar, and the sixth vacation week is tracked separately from the statutory five.</p></div></div>
-    <div class="block"><div class="prose"><h2>How it's built</h2><p>A Django app on PostgreSQL, with role-based access so employees, project managers and HR each see what they should. Profile pictures and other uploads live in Azure Blob Storage.</p><p>It runs on Azure App Service with separate staging and production environments, and GitHub Actions deploys each one automatically.</p></div></div>
-    <nav class="next" aria-label="Projects"><a href="timetrack-powerbi.html">Previous: Time tracking report</a><a href="../#work">All work</a></nav>
+    <figure class="figure"><button type="button" aria-label="Forstør skærmbillede"><img src="../img/absence-devices.webp" width="1536" height="894" alt="Appen vist på laptop, tablet og telefon."></button><figcaption>Den samme app på computer, tablet og telefon. Logo og kollegers navne er slørede.</figcaption></figure>
+    <div class="block"><div class="prose"><h2>Problemet</h2><p>Ferie, sygedage og hjemmearbejde blev registreret forskellige steder, og det krævede manuelt arbejde at holde styr på hver medarbejders feriesaldo på tværs af ferieår. Lederne havde ikke ét samlet overblik over, hvem der var væk, og hvad der ventede på deres godkendelse.</p></div></div>
+    <div class="block block--split"><figure class="figure"><button type="button" aria-label="Forstør skærmbillede"><img src="../img/absence-home.webp" width="1508" height="1121" alt="Medarbejderens forside med resterende ferie, hjemmearbejde, sygedage, barns sygedag og orlov i det aktuelle ferieår samt en graf over registreringer pr. måned." loading="lazy"></button><figcaption>En medarbejders forside for det aktuelle ferieår.</figcaption></figure><div class="prose"><h2>For medarbejdere</h2><ul><li>Registrér ferie, sygdom, barns sygedag, fridage, orlov og hjemmearbejde</li><li>Se den resterende feriesaldo for det aktuelle ferieår med det samme</li><li>Følg status på hver registrering og se årets historik pr. måned</li><li>Log ind med Microsoft-arbejdskontoen og få en mail, når en anmodning er godkendt eller afvist</li></ul></div></div>
+    <div class="block block--split"><div class="prose"><h2>For ledere</h2><ul><li>Overblik over dagens godkendte registreringer og dem, der venter på godkendelse</li><li>Alle registreringer pr. medarbejder og type i én graf og tabel</li><li>Godkend eller afvis med ét klik – ledere og HR får besked på mail, når der kommer noget nyt</li><li>Rapporter om fremmøde, registreringer og ferie</li><li>Beskeder til teamet på Slack direkte fra appen</li></ul></div><figure class="figure"><button type="button" aria-label="Forstør skærmbillede"><img src="../img/absence-overview.webp" width="1511" height="1103" alt="Lederoverblik med dagens godkendte registreringer, ventende registreringer, et felt til Slack-beskeder og en graf over alle registreringer pr. medarbejder." loading="lazy"></button><figcaption>Lederoverblik.</figcaption></figure></div>
+    <div class="block block--split"><figure class="figure"><button type="button" aria-label="Forstør skærmbillede"><img src="../img/absence-vacation.webp" width="1516" height="951" alt="Ferieadministration med hver medarbejders feriedage, brugte dage og resterende dage samt handlinger for nyt kalenderår, nyt ferieår, overførsel og fælles feriedage." loading="lazy"></button><figcaption>Ferieadministration.</figcaption></figure><div class="prose"><h2>Ferieår</h2><p>Det danske ferieår løber fra september til august, og saldiene skal føres korrekt videre. Det klarer siden til ferieadministration: nyt ferie- eller kalenderår, overførsel af dage mellem år og registrering af fælles feriedage for alle på én gang.</p><p>Danske helligdage hentes automatisk ind i kalenderen, og den 6. ferieuge holdes adskilt fra de fem lovpligtige.</p></div></div>
+    <div class="block"><div class="prose"><h2>Sådan er den bygget</h2><p>En Django-app på PostgreSQL med rollebaseret adgang, så medarbejdere, projektledere og HR hver især ser det, de skal. Profilbilleder og andre uploads ligger i Azure Blob Storage.</p><p>Den kører på Azure App Service med separate test- og produktionsmiljøer, og GitHub Actions deployer automatisk til hvert af dem.</p></div></div>
+    <nav class="next" aria-label="Projekter"><a href="timetrack-powerbi.html">Forrige: Timerapport</a><a href="../#work">Alt arbejde</a></nav>
   </main>
   <footer class="footer">
     <div class="wrap">© Andreas Gaardsted Vad</div>
   </footer>
-  <dialog class="lightbox" aria-label="Screenshot">
-    <form method="dialog"><button>Close</button></form>
+  <dialog class="lightbox" aria-label="Skærmbillede">
+    <form method="dialog"><button>Luk</button></form>
     <img src="" alt="">
   </dialog>
   <script src="../js/site.js" defer></script>
