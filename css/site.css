@@ -116,8 +116,6 @@ p { margin: 0; }
 .strength.is-active .case { border-color: rgb(255 255 255 / .45); }
 .strength.is-active .case .case__label { color: var(--amber); }
 .strength.is-active :focus-visible { outline-color: var(--amber); }
-.also { margin-top: 2.5rem; padding-top: 1.5rem; border-top: 1px solid var(--line); max-width: 70rem; }
-.also strong { margin-right: .4rem; }
 @media (prefers-reduced-motion: reduce) { .strength, .strength * { transition: none; } .strength.is-active { transform: none; } }
 
 /* Skills as horizontal rows */
@@ -135,14 +133,21 @@ p { margin: 0; }
 .stage-row li .used { font-size: .9rem; color: var(--ink); }
 #strengths + #work { padding-top: 0; }
 
+/* Tools */
+.section--tools { border-top: 1px solid var(--line); }
+.tools { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr)); gap: 0 2.5rem; }
+.tools li { display: grid; align-content: start; gap: .25rem; padding-block: 1.25rem; border-top: 2px solid var(--ink); }
+.tools strong { font-size: 1.6rem; line-height: 1.15; letter-spacing: -.015em; }
+.tools span { color: var(--muted); }
+
+/* Experience extras */
+.cv-extra { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 2rem 2.5rem; margin-top: 3rem; }
+.cv-extra h3 { font-size: 1.3rem; margin-bottom: .6rem; }
+.cv-extra p + p { margin-top: .8rem; }
+.cv-extra ul { margin: 0; padding-left: 1.2rem; line-height: 1.6; }
+
 /* About */
-.about { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(2.5rem, 5vw, 4.5rem); align-items: start; }
-.about__intro { display: grid; gap: 2rem; align-content: start; }
-.about__intro h2 { font-size: clamp(2.4rem, 5vw, 3.5rem); line-height: 1; letter-spacing: -.03em; font-weight: 800; }
-.about__intro h3 { font-size: 1.3rem; margin-bottom: .5rem; }
-.about__intro p + p { margin-top: .9rem; }
-.about__intro ul { margin: 0; padding-left: 1.25rem; font-size: 1.125rem; line-height: 1.7; }
-.jobs { list-style: none; margin: 0 0 2.5rem; padding: 0; }
+.jobs { list-style: none; margin: 0; padding: 0; border-bottom: 1px solid var(--line); }
 .jobs li { display: grid; grid-template-columns: 11rem minmax(0, 1fr); gap: 1.5rem; padding-block: 1.4rem; border-top: 1px solid var(--line); }
 .jobs .when { color: var(--muted); font-size: 1rem; padding-top: .2rem; }
 .jobs strong { display: block; font-size: 1.3rem; line-height: 1.3; }
@@ -198,10 +203,18 @@ p { margin: 0; }
   .row .row__stack { grid-column: 2; }
   .stage-row { grid-template-columns: minmax(0, 1fr); gap: 1.5rem; }
   .stage-row ul { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .cv-extra { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 @media (max-width: 760px) {
-  .hero__grid, .feature, .row, .about, .block--split { grid-template-columns: minmax(0, 1fr); }
-  .hero__photo { order: -1; width: 10rem; }
+  .hero__grid, .feature, .row, .block--split { grid-template-columns: minmax(0, 1fr); }
+  .hero__photo { order: -1; width: 7.5rem; aspect-ratio: 1; border-radius: 50%; border: 3px solid rgb(255 255 255 / .35); }
+  .hero { padding-top: 1rem; }
+  .hero__grid { gap: 1.5rem; }
+  .hero h1 { font-size: 2.9rem; line-height: 1; }
+  .hero__claim { margin-top: 1.25rem; }
+  .topbar .wrap { flex-wrap: nowrap; padding-block: 1.1rem; }
+  .topbar nav li:not(:last-child) { display: none; }
+  .cv-extra { grid-template-columns: minmax(0, 1fr); }
   .row .row__stack { grid-column: auto; }
   .row .shot img { height: auto; aspect-ratio: 16 / 10; }
   .jobs li { grid-template-columns: minmax(0, 1fr); gap: .25rem; }
