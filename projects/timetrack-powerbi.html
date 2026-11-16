@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Time tracking report – Andreas Gaardsted Vad</title>
-  <meta name="description" content="A Power BI report on project hours and budgets, built on data from the ClickUp and e‑conomic APIs.">
+  <meta name="description" content="A Power BI report on project hours, budgets and invoicing, built on ClickUp and e-conomic data in Azure Data Lake.">
   <link rel="icon" href="../img/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -30,12 +30,12 @@
   <main id="main" class="wrap">
     <section class="project-hero">
       <h1>Time tracking report</h1>
-      <p class="lede">A Power BI report that shows where project hours go, built on data pulled straight from ClickUp and e‑conomic.</p>
+      <p class="lede">A Power BI report that shows where project hours go – billable time, budgets, prepaid hours and invoicing – for project managers and leadership.</p>
       <dl class="facts">
         <div><dt>Role</dt><dd>Data analyst</dd></div>
-        <div><dt>Stack</dt><dd>Power BI, Power Query (M), DAX, Power Automate</dd></div>
-        <div><dt>Data sources</dt><dd>ClickUp API, e‑conomic API</dd></div>
-        <div><dt>Skills</dt><dd>Data modeling, API integration, visualization</dd></div>
+        <div><dt>Stack</dt><dd>Power BI (PBIP in Git), DAX, Power Query (M), Power Automate</dd></div>
+        <div><dt>Data</dt><dd>ClickUp and e‑conomic via Azure Data Lake, budgets from SharePoint</dd></div>
+        <div><dt>Size</dt><dd>11 pages, around 160 measures</dd></div>
       </dl>
     </section>
 
@@ -63,6 +63,7 @@
           <li>Billable versus unbillable time, filtered by date, project manager, client and status</li>
           <li>Budget status per project: over, near or within budget</li>
           <li>Drill-through from the overview to a single project and the people working on it</li>
+          <li>Pages for people, prepaid hours, finances, hourly rates and printable timesheets</li>
           <li>Role-based access, so each person sees the data they should</li>
           <li>On-demand refresh from the report through a Power Automate flow</li>
         </ul>
@@ -72,8 +73,8 @@
     <div class="block block--split">
       <div class="prose">
         <h2>The model</h2>
-        <p>ClickUp was the team's project tool, and its structure of spaces, folders and lists didn't match the project structure needed for reporting. Project metadata was kept in ClickUp in its own pseudo-structure, so the two could evolve separately.</p>
-        <p>I built the extraction in Power Query (M) against the ClickUp API, pulling project and time entry data and linking them through a bridge table. Invoices, prepaid hours and budgets from e‑conomic sit alongside, all sharing one calendar. That makes it possible to aggregate hours accurately by project, client and employee.</p>
+        <p>ClickUp is the team's project tool, and its structure of spaces, folders and lists doesn't match the project structure needed for reporting. Project metadata is kept in ClickUp in its own pseudo-structure and linked to tasks and time entries through a bridge table.</p>
+        <p>Around that sit invoices and prepaid hours from e‑conomic, budgets from a SharePoint workbook, users and one shared calendar. That makes it possible to follow hours and money by project, client and employee. The report is saved as a Power BI project (PBIP), so the model and every measure are versioned in Git.</p>
       </div>
       <figure class="figure">
         <button type="button" aria-label="Enlarge screenshot"><img src="../img/timetrack-model.webp" width="1155" height="1157" alt="Power BI model view with tables for time entries, tasks, project data, clients, users, calendar, budget, invoices and prepaid hours." loading="lazy"></button>
@@ -83,9 +84,9 @@
 
     <div class="block">
       <div class="prose">
-        <h2>Challenges and solutions</h2>
-        <p>The ClickUp API limits how much data a single request can return. I added pagination to the extraction so large datasets come through in manageable chunks.</p>
-        <p>The API can also return time entries in a denormalised form. By staging that data first and reshaping it in Power BI, I no longer had to fetch tasks a hundred at a time, which made the refresh considerably faster and more reliable.</p>
+        <h2>How it grew</h2>
+        <p>The first version called the ClickUp and e‑conomic APIs directly from Power Query. The ClickUp API limits how much a single request returns, so I added pagination and staged the time entries before reshaping them. It worked, but every refresh got slower and more fragile as the history grew.</p>
+        <p>So I moved the extraction out of Power BI and into the <a href="clickup-sync.html">ClickUp sync pipeline</a>. The report now reads Parquet and JSON files from Azure Data Lake, and the time entries use incremental refresh, so only recent data is reloaded. The same files feed the <a href="approval-app.html">approval app</a>, so both tools show the same numbers.</p>
       </div>
     </div>
 

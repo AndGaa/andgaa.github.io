@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 20 1200 560" role="img" aria-labelledby="t d">
   <title id="t">ClickUp sync pipeline</title>
-  <desc id="d">Time entries flow from the ClickUp API into an Azure Function, which checks freshness and takes a lock, splits the date range into months, fetches the months in parallel and writes one Parquet file per month plus run metadata to Azure Blob Storage. Reporting and apps read from there.</desc>
+  <desc id="d">Time entries flow from the ClickUp API into an Azure Function, which checks freshness and takes a lock, splits the date range into months, fetches the months in parallel and writes one Parquet file per month plus run metadata to Azure Blob Storage. The Power BI report and the approval app read from there.</desc>
   <style>
     text { font-family: "Schibsted Grotesk", system-ui, -apple-system, "Segoe UI", sans-serif; fill: #17262b; }
     .h { font-size: 22px; font-weight: 700; }
@@ -70,6 +70,6 @@
   <rect class="card" x="1036" y="230" width="134" height="160" rx="4"/>
   <text class="h" x="1054" y="272">Reports</text>
   <text class="h" x="1054" y="298">&amp; apps</text>
-  <text class="s" x="1054" y="334">Approval app,</text>
-  <text class="s" x="1054" y="356">reporting</text>
+  <text class="s" x="1054" y="334">Power BI,</text>
+  <text class="s" x="1054" y="356">approval app</text>
 </svg>

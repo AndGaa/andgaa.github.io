@@ -40,14 +40,14 @@
     </section>
 
     <figure class="figure">
-      <img src="../img/pipeline.svg" width="1200" height="560" alt="Diagram: time entries flow from the ClickUp API into an Azure Function, which checks freshness and takes a lock, splits the date range into months, fetches them in parallel and writes one Parquet file per month plus run metadata to Blob Storage. The approval app and reporting read from there.">
+      <img src="../img/pipeline.svg" width="1200" height="560" alt="Diagram: time entries flow from the ClickUp API into an Azure Function, which checks freshness and takes a lock, splits the date range into months, fetches them in parallel and writes one Parquet file per month plus run metadata to Blob Storage. The Power BI report and the approval app read from there.">
       <figcaption>How a sync runs.</figcaption>
     </figure>
 
     <div class="block">
       <div class="prose">
         <h2>The problem</h2>
-        <p>Several tools needed the same time entries from ClickUp: reporting, and later the approval app. Pulling them straight from the API every time was slow, ran into the API's limits and meant every tool had to solve the same problem.</p>
+        <p>Several tools needed the same time entries from ClickUp: the Power BI time tracking report, and later the approval app. Pulling them straight from the API every time was slow, ran into the API's limits and meant every tool had to solve the same problem.</p>
         <p>The pipeline fetches the data once, stores it in an analysis-friendly format, and lets everything downstream read from storage instead.</p>
       </div>
     </div>
