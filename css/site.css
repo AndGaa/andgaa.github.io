@@ -226,3 +226,6 @@ p { margin: 0; }
   .stage-row ul { grid-template-columns: minmax(0, 1fr); }
   .topbar nav ul { gap: .4rem 1.2rem; }
 }
+
+.row .year, .feature__text .year, .year { font-size: .95rem; font-weight: 600; color: var(--cobalt-deep); margin-bottom: .35rem; }
+.feature__text .year { margin-bottom: -.6rem; }
