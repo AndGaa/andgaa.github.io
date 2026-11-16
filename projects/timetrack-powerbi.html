@@ -1,232 +1,108 @@
-<!DOCTYPE HTML>
-<style>
-/* Page wrapper */
-.project-page {
-  max-width: 1200px;
-  margin: 0 auto;
-}
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Time tracking report – Andreas Gaardsted Vad</title>
+  <meta name="description" content="A Power BI report on project hours and budgets, built on data from the ClickUp and e‑conomic APIs.">
+  <link rel="icon" href="../img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;600;700;800&display=swap">
+  <link rel="stylesheet" href="../css/site.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
 
-/* Banner */
-.project-hero {
-  padding: 6rem 2rem 4rem;
-  /* background: linear-gradient(135deg, #0673e0, #111827); */
-  /* color: #fff; */
-  border-radius: 1rem;
-  margin-bottom: 4rem;
-}
-
-.project-hero h1 {
-  font-size: clamp(2.2rem, 4vw, 3rem);
-  margin-bottom: 0.5rem;
-}
-
-.project-hero .subtitle {
-  font-size: 1.1rem;
-  opacity: 0.85;
-  max-width: 600px;
-}
-
-.project-meta {
-  margin: 0;
-  list-style: none;
-  padding: 0;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1.5rem;
-
-}
-
-.project-meta li {
-  font-size: 0.95rem;
-  opacity: 0.85;
-}
-
-/* Content */
-.project-content {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  margin-top: 0;
-}
-
-/* Rows */
-.project-row {
-  display: grid;
-  grid-template-columns: 1.2fr 1fr;
-  gap: 3rem;
-  align-items: center;
-}
-
-.project-row.reverse {
-  grid-template-columns: 1fr 1.2fr;
-}
-
-.project-row.reverse .project-image {
-  order: 2;
-}
-
-/* Images */
-.project-image {
-  aspect-ratio: 16 / 9;
-  border-radius: 0.75rem;
-  overflow: hidden;
-}
-
-.project-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-/* Text */
-.project-text h2 {
-  margin-bottom: 0.75rem;
-  font-size: 1.6rem;
-}
-
-.project-text p,
-.project-text li {
-  font-size: 1rem;
-  line-height: 1.6;
-}
-
-.project-text ul {
-  padding-left: 1.2rem;
-}
-
-/* Mobile */
-@media (max-width: 768px) {
-  .project-row,
-  .project-row.reverse {
-    grid-template-columns: 1fr;
-  }
-
-  .project-row.reverse .project-image {
-    order: 0;
-  }
-
-  .project-hero {
-    padding: 4rem 1.5rem 3rem;
-  }
-}
-
-</style>
-<html>
-	<head>
-		<title>Strata by HTML5 UP</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="../assets/css/main.css" />
-	</head>
-	<body class="is-preload">
-
-		<!-- Header -->
-		<header id="header" data-component="header"></header>
-
-		<!-- Main -->
-<div id="main" class="project-page">
-
-  <!-- Banner / Hero -->
-  <section class="project-hero">
-    <div class="hero-content">
-      <h1>Timetrack Rapport</h1>
-      <p class="subtitle">
-        A Power BI rapport for monitoriring time spend on projects and tasks, integrating data from Clickup via API.
-      </p>
-
-      <ul class="project-meta">
-        <li><strong>Role:</strong> Data Analyst</li>
-        <li><strong>Stack:</strong> PowerBi, M, DAX</li>
-      </ul>
-      <ul class="project-meta">
-        <li><strong>Skills:</strong> Data Modelling, Data Visualization, API interaction</li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- Content Rows -->
-  <section class="project-content" id="two">
-
-    <div class="project-row">
-      <div class="project-image work-item" >
-		<a href="../images/fulls/pbi-timetrack-overview.png" class="image fit thumb"><img src="../images/fulls/pbi-timetrack-overview.png" alt=""></a>
-		<h3>Project Overview</h3>
-      </div>
-      <div class="project-text">
-        <h2>Overview</h2>
-        <p>
-          The project aimed to solve a key business need for managing how time was spend on projects and tasks. 
-		  By creating a Power BI rapport that integrated with Clickup's API and E-conomic API, we provided stakeholders with a much needed overview of time allocation and resource utilization.
-        </p>
-      </div>
-    </div>
-
-    <div class="project-row reverse">
-      <div class="project-image work-item" >
-		<a href="../images/fulls/pbi-timetrack-project-page-anon2.png" class="image fit thumb"><img src="../images/fulls/pbi-timetrack-project-page-anon2.png" alt=""></a>
-		<h3>Key Features</h3>
-      </div>
-      <div class="project-text">
-        <h2>Key Features</h2>
+  <header class="topbar">
+    <div class="wrap">
+      <a class="topbar__name" href="../">Andreas Gaardsted Vad</a>
+      <nav aria-label="Main">
         <ul>
-          <li>Role-based access control</li>
-          <li>On Demand refresh through Power Automate Flows</li>
-          <li>Self Service Data Visualization</li>
+          <li><a href="../#skills">Skills</a></li>
+          <li><a href="../#work">Work</a></li>
+          <li><a href="../#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="wrap">
+    <section class="project-hero">
+      <h1>Time tracking report</h1>
+      <p class="lede">A Power BI report that shows where project hours go, built on data pulled straight from ClickUp and e‑conomic.</p>
+      <dl class="facts">
+        <div><dt>Role</dt><dd>Data analyst</dd></div>
+        <div><dt>Stack</dt><dd>Power BI, Power Query (M), DAX, Power Automate</dd></div>
+        <div><dt>Data sources</dt><dd>ClickUp API, e‑conomic API</dd></div>
+        <div><dt>Skills</dt><dd>Data modeling, API integration, visualization</dd></div>
+      </dl>
+    </section>
+
+    <figure class="figure">
+      <button type="button" aria-label="Enlarge screenshot"><img src="../img/timetrack-overview.webp" width="1600" height="902" alt="Project overview page: tracked hours in the period, billable and unbillable totals, budget status per project and hours per project."></button>
+      <figcaption>Project overview. Client and project names are anonymised.</figcaption>
+    </figure>
+
+    <div class="block">
+      <div class="prose">
+        <h2>The problem</h2>
+        <p>The business had no clear view of how time was spent across projects and tasks. Hours were logged in ClickUp and invoicing lived in e‑conomic, so answering simple questions – which projects are over budget, how much of our time is billable – meant manual exports and spreadsheets.</p>
+        <p>The report brings both sources together and gives project managers and leadership one place to follow time, budgets and resource use.</p>
+      </div>
+    </div>
+
+    <div class="block block--split">
+      <figure class="figure">
+        <button type="button" aria-label="Enlarge screenshot"><img src="../img/timetrack-project.webp" width="1600" height="905" alt="Project detail page with time per employee and task." loading="lazy"></button>
+        <figcaption>Project detail page.</figcaption>
+      </figure>
+      <div class="prose">
+        <h2>Key features</h2>
+        <ul>
+          <li>Billable versus unbillable time, filtered by date, project manager, client and status</li>
+          <li>Budget status per project: over, near or within budget</li>
+          <li>Drill-through from the overview to a single project and the people working on it</li>
+          <li>Role-based access, so each person sees the data they should</li>
+          <li>On-demand refresh from the report through a Power Automate flow</li>
         </ul>
       </div>
     </div>
 
-    <div class="">
-		<div class="project-image work-item" >
-			<a href="../images/fulls/PBI-model.png" class="image fit thumb"><img src="../images/fulls/PBI-model.png" alt=""></a>
-			<h3>Data Model</h3>
-		</div>
-		<div class="project-text">
-			<h2>The Model</h2>
-			<p>
-				The stakeholders decided to use Clickup as their primary project management tool, which presented a challenge in extracting and transforming the data into a format suitable for Power BI.
-				All the project meta data was kept in Clickup in a pseudo structure, to keep the structure of Clickup separate from the project structure needed for reporting.
-				I developed a custom data pipeline using Power Query M language to interact with Clickup's API, to extract project data and time tracking data, and establish a relationship through a bridge table.
-				This allowed for accurate aggregation and analysis of time spent on projects as well as individual employee contributions.
-			</p>
-		</div>
+    <div class="block block--split">
+      <div class="prose">
+        <h2>The model</h2>
+        <p>ClickUp was the team's project tool, and its structure of spaces, folders and lists didn't match the project structure needed for reporting. Project metadata was kept in ClickUp in its own pseudo-structure, so the two could evolve separately.</p>
+        <p>I built the extraction in Power Query (M) against the ClickUp API, pulling project and time entry data and linking them through a bridge table. Invoices, prepaid hours and budgets from e‑conomic sit alongside, all sharing one calendar. That makes it possible to aggregate hours accurately by project, client and employee.</p>
+      </div>
+      <figure class="figure">
+        <button type="button" aria-label="Enlarge screenshot"><img src="../img/timetrack-model.webp" width="1155" height="1157" alt="Power BI model view with tables for time entries, tasks, project data, clients, users, calendar, budget, invoices and prepaid hours." loading="lazy"></button>
+        <figcaption>The semantic model.</figcaption>
+      </figure>
     </div>
 
-	<div class="">
-      <!-- <div class="project-image work-item" >
-		<a href="images/fulls/pbi-timetrack-frontpage.png" class="image fit thumb"><img src="images/fulls/pbi-timetrack-frontpage.png" alt=""></a>
-		<h3>Challenges & Solutions</h3>
-      </div> -->
-      <div class="project-text">
-        <h2>Challenges & Solutions</h2>
-        <p>
-			One of the main challenges of the project was dealing with the limitations of Clickup's API, which had restrictions on the amount of data that could be retrieved in a single request.
-			To overcome this, I implemented a pagination mechanism in the data extraction process, allowing for the retrieval of large datasets in manageable chunks.
-			The API could return denormalized timetracking data, which allowed me to stage data, before transforming it into a more analysis-friendly format in Power BI.
-			This made the tedious task of retriveving tasks data by the 100s redundant, and allowed for a more efficient data refresh process.
-        </p>
+    <div class="block">
+      <div class="prose">
+        <h2>Challenges and solutions</h2>
+        <p>The ClickUp API limits how much data a single request can return. I added pagination to the extraction so large datasets come through in manageable chunks.</p>
+        <p>The API can also return time entries in a denormalised form. By staging that data first and reshaping it in Power BI, I no longer had to fetch tasks a hundred at a time, which made the refresh considerably faster and more reliable.</p>
       </div>
     </div>
 
+    <nav class="next" aria-label="Projects">
+      <a href="../#work">All work</a>
+      <a href="absence-app.html">Next: Vacation and absence app</a>
+    </nav>
+  </main>
 
+  <footer class="footer">
+    <div class="wrap">© Andreas Gaardsted Vad</div>
+  </footer>
 
-  </section>
-
-  
-</div>
-
-		<!-- Footer -->
-		<footer id="footer" data-component="footer"></footer>
-    
-		<!-- Scripts -->
-     	<script src="../assets/js/components.js" defer></script>
-			<script src="../assets/js/jquery.min.js"></script>
-			<script src="../assets/js/jquery.poptrox.min.js"></script>
-			<script src="../assets/js/browser.min.js"></script>
-			<script src="../assets/js/breakpoints.min.js"></script>
-			<script src="../assets/js/util.js"></script>
-			<script src="../assets/js/main.js"></script>
-
-	</body>
+  <dialog class="lightbox" aria-label="Screenshot">
+    <form method="dialog"><button>Close</button></form>
+    <img src="" alt="">
+  </dialog>
+  <script src="../js/site.js" defer></script>
+</body>
 </html>
