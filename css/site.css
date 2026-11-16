@@ -64,6 +64,9 @@ p { margin: 0; }
 
 .actions { display: flex; flex-wrap: wrap; gap: .75rem; list-style: none; margin: 2rem 0 0; padding: 0; }
 .btn { display: inline-block; padding: .85rem 1.5rem; border-radius: var(--radius); border: 2px solid currentColor; font-weight: 600; text-decoration: none; }
+.btn--solid { background: var(--cobalt); border-color: var(--cobalt); color: #fff; }
+.btn--solid:hover { background: var(--ink); border-color: var(--ink); color: #fff; text-decoration: none; }
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 .btn--light { background: #fff; border-color: #fff; color: var(--cobalt-deep) !important; font-weight: 700; }
 .btn:hover { text-decoration: underline; }
 
@@ -96,6 +99,7 @@ p { margin: 0; }
 .row h3 a:hover { text-decoration: underline; }
 .row p { color: var(--muted); max-width: 52ch; }
 .row .row__stack { font-size: 1rem; color: var(--ink); }
+.row__side { display: grid; gap: 1rem; justify-items: start; }
 
 /* Strengths */
 .strengths { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.5rem; align-items: stretch; }
@@ -200,7 +204,7 @@ p { margin: 0; }
 @media (max-width: 1100px) {
   .strengths { grid-template-columns: minmax(0, 1fr); max-width: 40rem; }
   .row { grid-template-columns: 14rem minmax(0, 1fr); }
-  .row .row__stack { grid-column: 2; }
+  .row .row__side { grid-column: 2; }
   .stage-row { grid-template-columns: minmax(0, 1fr); gap: 1.5rem; }
   .stage-row ul { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .cv-extra { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -215,7 +219,7 @@ p { margin: 0; }
   .topbar .wrap { flex-wrap: nowrap; padding-block: 1.1rem; }
   .topbar nav li:not(:last-child) { display: none; }
   .cv-extra { grid-template-columns: minmax(0, 1fr); }
-  .row .row__stack { grid-column: auto; }
+  .row .row__side { grid-column: auto; }
   .row .shot img { height: auto; aspect-ratio: 16 / 10; }
   .jobs li { grid-template-columns: minmax(0, 1fr); gap: .25rem; }
   .stage-row { grid-template-columns: minmax(0, 1fr); gap: 1.5rem; padding: 1.5rem 1.25rem; }
