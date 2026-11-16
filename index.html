@@ -1,244 +1,208 @@
-<!DOCTYPE HTML>
-<!--
-	Strata by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<title>Andreas Gaardsted Vad</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-	</head>
-	<body class="is-preload">
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Andreas Gaardsted Vad – Data analyst and BI consultant</title>
+  <meta name="description" content="Andreas Gaardsted Vad builds data pipelines, Power BI models and business apps on Azure. Data analyst and BI consultant in Aarhus.">
+  <link rel="canonical" href="https://andgaa.github.io/">
+  <link rel="alternate" hreflang="en" href="https://andgaa.github.io/">
+  <link rel="alternate" hreflang="da" href="https://andgaa.github.io/da/">
+  <link rel="alternate" hreflang="x-default" href="https://andgaa.github.io/">
+  <meta property="og:title" content="Andreas Gaardsted Vad – Data analyst and BI consultant">
+  <meta property="og:description" content="Andreas Gaardsted Vad builds data pipelines, Power BI models and business apps on Azure. Data analyst and BI consultant in Aarhus.">
+  <meta property="og:image" content="https://andgaa.github.io/img/andreas.webp">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&amp;display=swap">
+  <link rel="stylesheet" href="css/site.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="band">
+    <header class="topbar">
+      <div class="wrap">
+        <a class="topbar__name" href="./">Andreas Gaardsted Vad</a>
+        <nav aria-label="Main">
+          <ul>
+            <li><a href="#work">Work</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a class="lang" href="da/" hreflang="da" lang="da">Dansk</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <section class="hero wrap" aria-labelledby="name">
+      <div class="hero__grid">
+        <div>
+          <h1 id="name">Andreas Gaardsted Vad</h1>
+          <p class="hero__claim">I build the pipelines, models and apps behind the numbers a business runs on.</p>
+          <p class="hero__meta">Data analyst and BI consultant in Aarhus. Microsoft Certified: Fabric Analytics Engineer Associate.</p>
+          <ul class="actions">
+            <li><a class="btn btn--light" href="mailto:andreasgaardsted@gmail.com">Email me</a></li>
+            <li><a class="btn" href="https://www.linkedin.com/in/andreas-gaardsted-vad/">LinkedIn</a></li>
+          </ul>
+        </div>
+        <img class="hero__photo" src="img/andreas.webp" width="640" height="640" alt="Portrait of Andreas Gaardsted Vad">
+      </div>
+      <ol class="lineage" aria-label="What I build, from source to decision">
+        <li><b>Sources</b><span>ClickUp, e‑conomic and SharePoint</span></li>
+        <li><b>Collect</b><span>Python jobs on Azure Functions</span></li>
+        <li><b>Store</b><span>Parquet files in Azure Data Lake</span></li>
+        <li><b>Model</b><span>Power BI semantic models and DAX</span></li>
+        <li><b>Deliver</b><span>Reports, web apps and automated flows</span></li>
+      </ol>
+    </section>
+  </div>
+  <main id="main">
+    <section class="section" id="work" aria-labelledby="work-title">
+      <div class="wrap">
+        <div class="section__head">
+          <h2 id="work-title">Work</h2>
+          <p>Four tools I've built. The first three share one data flow: the sync pipeline collects the hours that the approval app and the Power BI report are built on. Screenshots use demo data or are anonymised.</p>
+        </div>
+        <article class="feature">
+          <a class="shot" href="projects/approval-app.html" tabindex="-1" aria-hidden="true"><img src="img/approval-project.webp" width="1600" height="1000" alt="" loading="lazy"></a>
+          <div class="feature__text">
+            <h3><a href="projects/approval-app.html">Approval and invoicing app</a></h3>
+            <p>Project managers approve each project's hours month by month and send them on to timesheets and draft invoices – prepaid hour packages included.</p>
+            <ul class="tags"><li>Python</li><li>Azure Functions</li><li>Table Storage</li><li>Power Automate</li></ul>
+            <a href="projects/approval-app.html">Read the case</a>
+          </div>
+        </article>
+        <ul class="rows">
+          <li class="row">
+            <a class="files" href="projects/clickup-sync.html" tabindex="-1" aria-hidden="true"><span>2026-08.parquet</span><span>2026-09.parquet</span><span>2026-10.parquet</span></a>
+            <div>
+              <h3><a href="projects/clickup-sync.html">ClickUp sync pipeline</a></h3>
+              <p>Copies time entries from ClickUp into one Parquet file per month, fetched in parallel, with locking and a log of every run.</p>
+            </div>
+            <p class="row__stack">Python, Azure Functions, Blob Storage, pandas, PyArrow</p>
+          </li>
+          <li class="row">
+            <a class="shot" href="projects/timetrack-powerbi.html" tabindex="-1" aria-hidden="true"><img src="img/timetrack-overview.webp" alt="" loading="lazy" width="1600" height="900"></a>
+            <div>
+              <h3><a href="projects/timetrack-powerbi.html">Time tracking report</a></h3>
+              <p>An 11-page Power BI report on hours, budgets, prepaid hours and invoicing, refreshed incrementally from the Data Lake.</p>
+            </div>
+            <p class="row__stack">Power BI, DAX, Power Query, PBIP in Git</p>
+          </li>
+          <li class="row">
+            <a class="shot" href="projects/absence-app.html" tabindex="-1" aria-hidden="true"><img src="img/absence-devices.webp" alt="" loading="lazy" width="1600" height="900"></a>
+            <div>
+              <h3><a href="projects/absence-app.html">Vacation and absence app</a></h3>
+              <p>Employees register time away, managers approve it, and vacation balances carry over correctly from year to year.</p>
+            </div>
+            <p class="row__stack">Python, Django, PostgreSQL, Azure App Service, GitHub Actions</p>
+          </li>
+        </ul>
+      </div>
+    </section>
 
-		<!-- Header -->
-		<header id="header" data-component="header"></header>
+    <section class="section" id="skills" aria-labelledby="skills-title">
+      <div class="wrap">
+        <div class="section__head">
+          <h2 id="skills-title">Skills</h2>
+          <p>Grouped by where they sit in the flow of data, from source to decision. Each one links to the project where I've used it.</p>
+        </div>
+        <div class="skills">
+        <section class="stage" aria-labelledby="stage-1">
+          <div class="stage__head"><span class="stage__num" aria-hidden="true">1</span><h3 id="stage-1">Collect</h3></div>
+          <p>Getting data out of the systems a business already runs on.</p>
+          <ul>
+              <li><strong>REST APIs</strong><span>ClickUp and e‑conomic, with paging, retries and staging</span><span class="chips"><a class="tag" href="projects/clickup-sync.html">Sync pipeline</a><a class="tag" href="projects/timetrack-powerbi.html">Time report</a></span></li>
+              <li><strong>Python</strong><span>pandas, PyArrow and requests for extraction and reshaping</span><span class="chips"><a class="tag" href="projects/clickup-sync.html">Sync pipeline</a><a class="tag" href="projects/approval-app.html">Approval app</a></span></li>
+              <li><strong>Azure Functions</strong><span>On-demand jobs with locking, freshness checks and run logs</span><span class="chips"><a class="tag" href="projects/clickup-sync.html">Sync pipeline</a><a class="tag" href="projects/approval-app.html">Approval app</a></span></li>
+              <li><strong>Power Query (M)</strong><span>Custom API connectors and transformations</span><span class="chips"><a class="tag" href="projects/timetrack-powerbi.html">Time report</a></span></li>
+          </ul>
+        </section>
+        <section class="stage" aria-labelledby="stage-2">
+          <div class="stage__head"><span class="stage__num" aria-hidden="true">2</span><h3 id="stage-2">Store</h3></div>
+          <p>Keeping data in a shape that is fast and cheap to read.</p>
+          <ul>
+              <li><strong>Parquet in Azure Data Lake</strong><span>Monthly partitions, one file per month, rewritten only when they change</span><span class="chips"><a class="tag" href="projects/clickup-sync.html">Sync pipeline</a><a class="tag" href="projects/timetrack-powerbi.html">Time report</a></span></li>
+              <li><strong>PostgreSQL</strong><span>Relational models with constraints for HR and vacation data</span><span class="chips"><a class="tag" href="projects/absence-app.html">HR app</a></span></li>
+              <li><strong>Azure Table and Blob Storage</strong><span>App state, caches and uploads</span><span class="chips"><a class="tag" href="projects/approval-app.html">Approval app</a><a class="tag" href="projects/absence-app.html">HR app</a></span></li>
+          </ul>
+        </section>
+        <section class="stage" aria-labelledby="stage-3">
+          <div class="stage__head"><span class="stage__num" aria-hidden="true">3</span><h3 id="stage-3">Model</h3></div>
+          <p>Turning raw tables into numbers people trust.</p>
+          <ul>
+              <li><strong>Power BI semantic models</strong><span>Bridge tables, a shared calendar and sources joined across systems</span><span class="chips"><a class="tag" href="projects/timetrack-powerbi.html">Time report</a></span></li>
+              <li><strong>DAX</strong><span>Around 160 measures for budgets, billing and prepaid hours</span><span class="chips"><a class="tag" href="projects/timetrack-powerbi.html">Time report</a></span></li>
+              <li><strong>Incremental refresh and security</strong><span>Reload only recent data; each person sees what they should</span><span class="chips"><a class="tag" href="projects/timetrack-powerbi.html">Time report</a></span></li>
+              <li><strong>PBIP in Git</strong><span>The model and every measure versioned as code</span><span class="chips"><a class="tag" href="projects/timetrack-powerbi.html">Time report</a></span></li>
+          </ul>
+        </section>
+        <section class="stage" aria-labelledby="stage-4">
+          <div class="stage__head"><span class="stage__num" aria-hidden="true">4</span><h3 id="stage-4">Deliver</h3></div>
+          <p>Putting the numbers where decisions are made.</p>
+          <ul>
+              <li><strong>Power BI reports</strong><span>An 11-page report for project managers and leadership</span><span class="chips"><a class="tag" href="projects/timetrack-powerbi.html">Time report</a></span></li>
+              <li><strong>Web apps</strong><span>Django and Azure Functions apps with Microsoft sign-in</span><span class="chips"><a class="tag" href="projects/absence-app.html">HR app</a><a class="tag" href="projects/approval-app.html">Approval app</a></span></li>
+              <li><strong>Power Automate</strong><span>Flows that create timesheets and draft invoices</span><span class="chips"><a class="tag" href="projects/approval-app.html">Approval app</a><a class="tag" href="projects/timetrack-powerbi.html">Time report</a></span></li>
+              <li><strong>CI/CD</strong><span>GitHub Actions deploying to Azure, staging and production</span><span class="chips"><a class="tag" href="projects/absence-app.html">HR app</a></span></li>
+          </ul>
+        </section>
+        </div>
+        <div class="cert">
+          <div><strong>Microsoft Certified: Fabric Analytics Engineer Associate</strong><span>Lakehouses, warehouses, pipelines and notebooks in Microsoft Fabric.</span></div>
+          <a class="btn" href="https://learn.microsoft.com/api/credentials/share/en-us/AndreasGaardstedVad-6602/70CAC734A6191983?sharingId=DD96852B407B510C">View credential</a>
+        </div>
+      </div>
+    </section>
 
-		<!-- Main -->
-			<div id="main">
+    <section class="section section--white" id="about" aria-labelledby="about-title">
+      <div class="wrap about">
+        <div class="about__intro">
+          <h2 id="about-title">About</h2>
+          <p>I started out in the Microsoft Power Platform – Power BI, Power Automate and Power Apps – and have moved steadily towards Python, building the pipelines and apps that the reports depend on.</p><p>Before data, I took a master's in applied philosophy, specialising in organisational and dialogue philosophy. It shows in how I work: I start by asking what people actually need to know.</p>
+          <div>
+            <h3>What I enjoy most</h3>
+            <ul><li>Automating complex business processes</li><li>Reporting that people use to make decisions</li><li>Business apps that are easy to use</li></ul>
+          </div>
+        </div>
+        <div>
+          <h3 class="sub">Experience</h3>
+          <ol class="jobs">
+          <li><span class="when">2022 – now</span><div><strong>Data analyst</strong><span>illumi, Aarhus</span><p>Power BI reports and dashboards, ETL in Fabric and in Python on Azure Functions, and business applications in Django.</p></div></li>
+          <li><span class="when">2021 – 2022</span><div><strong>Digital consultant</strong><span>illumi, Aarhus</span></div></li>
+          <li><span class="when">2020 – 2023</span><div><strong>Power BI and communications consultant</strong><span>Vanebrudspalæet, Aarhus</span></div></li>
+          <li><span class="when">2020 – 2021</span><div><strong>Founder</strong><span>Forstå Din Rådgiver</span></div></li>
+          <li><span class="when">2018 – 2020</span><div><strong>Digital marketing</strong><span>Kognitiv Terapi Center Århus</span><p>Communications intern, then digital marketing.</p></div></li>
+          </ol>
+          <div class="facts-2">
+            <div>
+              <h3>Education</h3>
+            <p><strong>MA, Applied Philosophy</strong><br>Organisational and dialogue philosophy<br><span class="muted">Aalborg University, 2017 – 2019</span></p>
+            <p><strong>BA, Applied Philosophy</strong><br><span class="muted">Aalborg University, 2014 – 2017</span></p>
+            </div>
+            <div>
+              <h3>Languages</h3>
+              <p>Danish <span class="muted">– native</span><br>English <span class="muted">– professional working</span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-				<!-- One -->
-					<section id="one">
-						<header class="major">
-							<h2>Ipsum lorem dolor aliquam ante commodo<br />
-							magna sed accumsan arcu neque.</h2>
-						</header>
-						<p>Accumsan orci faucibus id eu lorem semper. Eu ac iaculis ac nunc nisi lorem vulputate lorem neque cubilia ac in adipiscing in curae lobortis tortor primis integer massa adipiscing id nisi accumsan pellentesque commodo blandit enim arcu non at amet id arcu magna. Accumsan orci faucibus id eu lorem semper nunc nisi lorem vulputate lorem neque cubilia.</p>
-						<ul class="actions">
-							<li><a href="#" class="button">Learn More</a></li>
-						</ul>
-					</section>
-				
-				<!-- Skill Section -->
-					<section>
-						<header class="major">
-							<h2>Skills</h2>
-						</header>
-						<div class="skill-set">
+    <section class="band" id="contact" aria-labelledby="contact-title">
+      <div class="wrap contact">
+        <h2 id="contact-title">Let's talk</h2>
+        <p>I'm open to new roles in data and BI. Email is the quickest way to reach me.</p>
+        <a class="contact__mail" href="mailto:andreasgaardsted@gmail.com">andreasgaardsted@gmail.com</a>
+        <ul><li><a href="https://www.linkedin.com/in/andreas-gaardsted-vad/">LinkedIn</a></li><li><a href="https://github.com/AndGaa">GitHub</a></li></ul>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
+    <div class="wrap">© Andreas Gaardsted Vad</div>
+  </footer>
 
-							<div class="skill wide">
-								<i class="fas fa-code" style="font-size:50px; margin-right:20px;"></i>
-								<div class="content">
-									<h3>API Work</h3>
-									<ul>
-										<li>Retrieved and transformed data from e-conomic, ClickUp, and custom applications</li>
-										<li>Worked extensively with APIs in Power Query, Postman, and Python</li>
-										<li>Developed custom API wrappers and SDKs for multiple platforms</li>
-										<li>Enabled integration of external data into dashboards and workflows</li>
-									</ul>
-								</div>
-							</div>
-							<div class="skill">
-								<i class="fas fa-project-diagram"></i>
-								<div class="content">
-									<h3>Data Architecture & Modeling</h3>
-										<ul>
-											<li>Designing reusable and governed semantic layers for analytics</li>
-											<li>Building tabular models and data marts aligned with business needs</li>
-											<li>Structuring data for both enterprise reporting and self-service</li>
-											<li>Collaborating with stakeholders to ensure trust and consistency</li>
-										</ul>
-								</div>
-							</div>
-
-							<div class="skill">
-								<i class="fas fa-shield-alt" style="color:#f5a623;"></i>
-								<div class="content">
-									<h3>Data Governance in Fabric</h3>
-									<ul>
-										<li>Implementing standards for naming, calculations, and security</li>
-										<li>Managing RLS/OLS and workspace governance for Power BI</li>
-										<li>Certifying datasets and maintaining lifecycle documentation</li>
-										<li>Ensuring compliance, consistency, and high-quality analytics</li>
-									</ul>
-								</div>
-							</div>
-
-							<div class="skill">
-								<i class="fas fa-database" style="color:#7ed321;"></i>
-								<div class="content">
-									<h3>Data Integration in Fabric and Azure</h3>
-									<ul>
-										<li>Connecting Fabric semantic models with Azure Data Platform components</li>
-										<li>Building ETL/ELT pipelines for seamless data flow</li>
-										<li>Automating data refresh and transformation processes</li>
-										<li>Ensuring data quality and reliability across systems</li>
-									</ul>
-								</div>
-							</div>
-
-							<div class="skill">
-								 <i class="fas fa-tachometer-alt" style="color:#03923a;"></i>
-								<div class="content">
-									<h3>Performance Optimization</h3>
-										<ul>
-											<li>Optimizing dataset refresh</li>
-											<li>Enhancing report and dashboard performance </li>
-											<li>Tuning visuals and user experience for speed and usability</li>
-											<li>Applying best practices for high-performance analytical models</li>
-										</ul>
-								</div>
-							</div>
-
-						</div>
-					</section>
-				<!-- Tool Section -->
-					<section>
-						<header class="major">
-							<h2>Tools</h2>
-						</header>
-						<div class="skill-set">
-
-							<div class="skill">
-								<img src="images/thumbs/pbi.svg" class="skills-img" alt="">
-								<div class="content">
-									<h3>Power BI</h3>
-										<ul>
-											<li>Advanced data modeling and transformation with Power Query</li>
-											<li>Strong expertise in DAX</li>
-											<li>Creation of interactive dashboards and KPI-driven reports</li>
-										</ul>
-								</div>
-							</div>
-
-							<div class="skill">
-								<img src="images/thumbs/python.svg" class="skills-img" alt="">
-								<div class="content">
-									<h3>Python</h3>
-										<ul>
-											<li>Data analysis and manipulation using Pandas, Polars and NumPy</li>
-											<li>Writing scripts for data cleaning and automation</li>
-											<li>Basic data visualization using Matplotlib</li>
-											<li>Supporting analytics and reporting workflows</li>
-										</ul>
-								</div>
-							</div>
-							<div class="skill">
-								<img src="images/thumbs/fabric.svg" class="skills-img" alt="">
-								<div class="content">
-									<h3>Fabric</h3>
-										<ul>
-											<li><a href="https://learn.microsoft.com/api/credentials/share/en-us/AndreasGaardstedVad-6602/70CAC734A6191983?sharingId=DD96852B407B510C" target="_blank">Microsoft
-												Fabric Analytics Engineer Associate Certified</a></li>
-											<li>Designing and managing data warehouses and lakehouses for scalable storage</li>
-											<li>Building robust ETL/ELT pipelines for data integration and transformation</li>
-											<li>Developing and running notebooks for advanced analytics and data processing</li>
-											<li>Optimizing data architecture for performance, reliability, and collaboration</li>
-										</ul>
-								</div>
-							</div>
-
-							<div class="skill">
-								<img src="images/thumbs/power-platform.svg" class="skills-img" alt="">
-								<div class="content">
-									<h3>Power Platform</h3>
-										<ul>
-											<li>Developing apps with Power Apps for streamlined business processes</li>
-											<li>Automating workflows using Power Automate</li>
-											<li>Analyzing data and building dashboards with Power BI</li>
-											<li>Connecting data across platforms for actionable insights</li>
-										</ul>
-								</div>
-							</div>
-
-						</div>
-					</section>
-
-				<!-- Two -->
-					<section>
-						<h2>Recent Work</h2>
-						<div class="row">
-							<article class="col-6 col-12-xsmall work-item">
-								<a href="project_detail.html" class="image fit thumb"><img src="images/fulls/approval-app_notext-samespace.png" alt="" /></a>
-								<h3>Vacation and attendance app</h3>
-								<p>Lorem ipsum dolor sit amet nisl sed nullam feugiat.</p>
-							</article>
-							<article class="col-6 col-12-xsmall work-item">
-								<a href="projects/timetrack-powerbi.html" class="image fit thumb"><img src="images/fulls/PBI-model.png" alt="" /></a>
-								<h3>Timetracking Rapport</h3>
-								<p>Lorem ipsum dolor sit amet nisl sed nullam feugiat.</p>
-							</article>
-						</div>
-						<ul class="actions">
-							<li><a href="#" class="button">Full Portfolio</a></li>
-						</ul>
-					</section>
-
-				<!-- Three -->
-					<section id="three">
-						<h2>Get In Touch</h2>
-						<p>Accumsan pellentesque commodo blandit enim arcu non at amet id arcu magna. Accumsan orci faucibus id eu lorem semper nunc nisi lorem vulputate lorem neque lorem ipsum dolor.</p>
-						<div class="row">
-							<div class="col-8 col-12-small">
-								<form method="post" action="#">
-									<div class="row gtr-uniform gtr-50">
-										<div class="col-6 col-12-xsmall"><input type="text" name="name" id="name" placeholder="Name" /></div>
-										<div class="col-6 col-12-xsmall"><input type="email" name="email" id="email" placeholder="Email" /></div>
-										<div class="col-12"><textarea name="message" id="message" placeholder="Message" rows="4"></textarea></div>
-									</div>
-								</form>
-								<ul class="actions">
-									<li><input type="submit" value="Send Message" /></li>
-								</ul>
-							</div>
-							<div class="col-4 col-12-small">
-								<ul class="labeled-icons">
-									<li>
-										<h3 class="icon solid fa-home"><span class="label">Address</span></h3>
-										1234 Somewhere Rd.<br />
-										Nashville, TN 00000<br />
-										United States
-									</li>
-									<li>
-										<h3 class="icon solid fa-mobile-alt"><span class="label">Phone</span></h3>
-										000-000-0000
-									</li>
-									<li>
-										<h3 class="icon solid fa-envelope"><span class="label">Email</span></h3>
-										<a href="#">hello@untitled.tld</a>
-									</li>
-								</ul>
-							</div>
-						</div>
-					</section>
-
-			</div>
-
-		<!-- Footer -->
-		<footer id="footer" data-component="footer"></footer>
-
-
-		<!-- Scripts -->
-			<script src="assets/js/components.js" defer></script>
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.poptrox.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-
-
-	</body>
+</body>
 </html>

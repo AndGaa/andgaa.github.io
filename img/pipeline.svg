@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 20 1200 560" role="img" aria-labelledby="t d">
+  <title id="t">ClickUp sync pipeline</title>
+  <desc id="d">Time entries flow from the ClickUp API into an Azure Function, which checks freshness and takes a lock, splits the date range into months, fetches the months in parallel and writes one Parquet file per month plus run metadata to Azure Blob Storage. The Power BI report and the approval app read from there.</desc>
+  <style>
+    text { font-family: "Schibsted Grotesk", system-ui, -apple-system, "Segoe UI", sans-serif; fill: #17262b; }
+    .h { font-size: 22px; font-weight: 700; }
+    .s { font-size: 16px; fill: #56676c; }
+    .b { font-size: 17px; }
+    .n { font-size: 15px; font-weight: 700; fill: #fff; }
+    .f { font-size: 15px; fill: #17262b; }
+    .card { fill: #fff; stroke: #c9d1cf; stroke-width: 1.5; }
+    .fn { fill: #fff; stroke: #0c6b78; stroke-width: 2; }
+    .line { stroke: #8d9a98; stroke-width: 2; fill: none; }
+  </style>
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto"><path d="M0 0L10 5L0 10z" fill="#8d9a98"/></marker>
+  </defs>
+  <rect y="20" width="1200" height="560" rx="10" fill="#e2e6e5"/>
+
+  <!-- ClickUp -->
+  <rect class="card" x="40" y="250" width="190" height="120" rx="4"/>
+  <text class="h" x="62" y="296">ClickUp</text>
+  <text class="s" x="62" y="324">Time entries API,</text>
+  <text class="s" x="62" y="346">by month</text>
+
+  <path class="line" d="M230 310H286" marker-end="url(#a)"/>
+
+  <!-- Function -->
+  <rect class="fn" x="292" y="70" width="370" height="460" rx="4"/>
+  <rect x="292" y="70" width="370" height="56" rx="4" fill="#0c6b78"/>
+  <rect x="292" y="110" width="370" height="16" fill="#0c6b78"/>
+  <text class="h" x="314" y="106" style="fill:#fff">Azure Function (Python)</text>
+  <text class="s" x="314" y="160">run_sync – rolling 12 months,</text>
+  <text class="s" x="314" y="182">custom range or full refresh</text>
+
+  <g>
+    <circle cx="328" cy="236" r="15" fill="#0c6b78"/><text class="n" x="328" y="241" text-anchor="middle">1</text>
+    <text class="b" x="356" y="232">Skip if data is fresh,</text>
+    <text class="b" x="356" y="254">take a lock so runs never overlap</text>
+
+    <circle cx="328" cy="316" r="15" fill="#0c6b78"/><text class="n" x="328" y="321" text-anchor="middle">2</text>
+    <text class="b" x="356" y="321">Split the range into months</text>
+
+    <circle cx="328" cy="386" r="15" fill="#0c6b78"/><text class="n" x="328" y="391" text-anchor="middle">3</text>
+    <text class="b" x="356" y="382">Fetch months in parallel</text>
+    <text class="b" x="356" y="404">with a pool of workers</text>
+
+    <circle cx="328" cy="466" r="15" fill="#0c6b78"/><text class="n" x="328" y="471" text-anchor="middle">4</text>
+    <text class="b" x="356" y="462">Write Parquet per month</text>
+    <text class="b" x="356" y="484">and log the run</text>
+  </g>
+
+  <path class="line" d="M662 310H718" marker-end="url(#a)"/>
+
+  <!-- Blob -->
+  <rect class="card" x="724" y="130" width="250" height="360" rx="4"/>
+  <text class="h" x="746" y="170">Blob Storage</text>
+  <g>
+    <rect x="746" y="194" width="206" height="36" rx="3" fill="#eef1f0"/><text class="f" x="760" y="218">2026-08.parquet</text>
+    <rect x="746" y="238" width="206" height="36" rx="3" fill="#eef1f0"/><text class="f" x="760" y="262">2026-09.parquet</text>
+    <rect x="746" y="282" width="206" height="36" rx="3" fill="#eef1f0"/><text class="f" x="760" y="306">2026-10.parquet</text>
+    <text class="s" x="760" y="342">…one file per month</text>
+    <rect x="746" y="364" width="206" height="36" rx="3" fill="#eef1f0"/><text class="f" x="760" y="388">latest_sync.json</text>
+    <rect x="746" y="408" width="206" height="36" rx="3" fill="#eef1f0"/><text class="f" x="760" y="432">history / lock</text>
+  </g>
+
+  <path class="line" d="M974 310H1030" marker-end="url(#a)"/>
+
+  <!-- Consumers -->
+  <rect class="card" x="1036" y="230" width="134" height="160" rx="4"/>
+  <text class="h" x="1054" y="272">Reports</text>
+  <text class="h" x="1054" y="298">&amp; apps</text>
+  <text class="s" x="1054" y="334">Power BI,</text>
+  <text class="s" x="1054" y="356">approval app</text>
+</svg>

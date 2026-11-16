@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="da">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Timerapport – Andreas Gaardsted Vad</title>
+  <meta name="description" content="En Power BI-rapport om projekttimer, budgetter og fakturering, bygget på data fra ClickUp og e-conomic i Azure Data Lake.">
+  <link rel="canonical" href="https://andgaa.github.io/da/projects/timetrack-powerbi.html">
+  <link rel="alternate" hreflang="en" href="https://andgaa.github.io/projects/timetrack-powerbi.html">
+  <link rel="alternate" hreflang="da" href="https://andgaa.github.io/da/projects/timetrack-powerbi.html">
+  <link rel="alternate" hreflang="x-default" href="https://andgaa.github.io/projects/timetrack-powerbi.html">
+  <meta property="og:title" content="Timerapport – Andreas Gaardsted Vad">
+  <meta property="og:description" content="En Power BI-rapport om projekttimer, budgetter og fakturering, bygget på data fra ClickUp og e-conomic i Azure Data Lake.">
+  <meta property="og:image" content="https://andgaa.github.io/img/andreas.webp">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="../../img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&amp;display=swap">
+  <link rel="stylesheet" href="../../css/site.css">
+</head>
+<body>
+  <a class="skip" href="#main">Gå til indhold</a>
+  <div class="band">
+    <header class="topbar">
+      <div class="wrap">
+        <a class="topbar__name" href="../../da/">Andreas Gaardsted Vad</a>
+        <nav aria-label="Hovedmenu">
+          <ul>
+            <li><a href="../../da/#work">Arbejde</a></li>
+            <li><a href="../../da/#skills">Kompetencer</a></li>
+            <li><a href="../../da/#about">Om mig</a></li>
+            <li><a href="../../da/#contact">Kontakt</a></li>
+            <li><a class="lang" href="../../projects/timetrack-powerbi.html" hreflang="en" lang="en">English</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <section class="project-hero wrap" aria-labelledby="title">
+      <a class="crumb" href="../#work">← Alt arbejde</a>
+      <h1 id="title">Timerapport</h1>
+      <p class="lede">En Power BI-rapport, der viser, hvor projekttimerne går hen – fakturerbar tid, budgetter, klippekort og fakturering – til projektledere og ledelse.</p>
+      <dl class="facts">
+        <div><dt>Stack</dt><dd>Power BI (PBIP i Git), DAX, Power Query (M), Power Automate</dd></div>
+        <div><dt>Data</dt><dd>ClickUp og e‑conomic via Azure Data Lake, budgetter fra SharePoint</dd></div>
+        <div><dt>Omfang</dt><dd>11 sider, omkring 160 measures</dd></div>
+        <div><dt>Rolle</dt><dd>Dataanalytiker</dd></div>
+      </dl>
+    </section>
+  </div>
+  <main id="main" class="wrap project">
+    <figure class="figure"><button type="button" aria-label="Forstør skærmbillede"><img src="../../img/timetrack-overview.webp" width="1600" height="902" alt="Projektoversigt: registrerede timer i perioden, fakturerbare og ikke-fakturerbare timer, budgetstatus og timer pr. projekt."></button><figcaption>Projektoversigt. Kunde- og projektnavne er anonymiserede.</figcaption></figure>
+    <div class="block"><div class="prose"><h2>Problemet</h2><p>Virksomheden havde ikke et klart overblik over, hvordan tiden blev brugt på tværs af projekter og opgaver. Timerne blev registreret i ClickUp, og faktureringen lå i e‑conomic, så simple spørgsmål – hvilke projekter er over budget, hvor meget af tiden er fakturerbar – krævede manuelle udtræk og regneark.</p><p>Rapporten samler kilderne og giver projektledere og ledelse ét sted at følge tid, budgetter og ressourceforbrug.</p></div></div>
+    <div class="block block--split"><figure class="figure"><button type="button" aria-label="Forstør skærmbillede"><img src="../../img/timetrack-project.webp" width="1600" height="905" alt="Projektside med tid pr. opgave, budget, fakturerede timer, tid pr. person og en burndown-graf." loading="lazy"></button><figcaption>Projektside. Opgavenavne og personer er slørede.</figcaption></figure><div class="prose"><h2>Det kan den</h2><ul><li>Fakturerbar og ikke-fakturerbar tid, filtreret på dato, projektleder, kunde og status</li><li>Budgetstatus pr. projekt: over, tæt på eller inden for budget</li><li>Drill-through fra oversigten til det enkelte projekt og de folk, der arbejder på det</li><li>Sider om medarbejdere, klippekort, økonomi, timepriser og timesedler til print</li><li>Rollebaseret adgang, så hver bruger ser de data, de skal</li><li>Opdatering efter behov direkte fra rapporten via et Power Automate-flow</li></ul></div></div>
+    <div class="block block--split"><div class="prose"><h2>Modellen</h2><p>ClickUp er teamets projektværktøj, og strukturen med spaces, mapper og lister passer ikke til den projektstruktur, rapporteringen kræver. Projektdata ligger derfor i ClickUp i sin egen pseudostruktur og kobles til opgaver og tidsregistreringer via en brotabel.</p><p>Omkring den ligger fakturaer og klippekort fra e‑conomic, budgetter fra en projektmappe i SharePoint, brugere og én fælles kalender. Det gør det muligt at følge timer og penge pr. projekt, kunde og medarbejder. Rapporten er gemt som et Power BI-projekt (PBIP), så modellen og alle measures er versioneret i Git.</p></div><figure class="figure"><button type="button" aria-label="Forstør skærmbillede"><img src="../../img/timetrack-model.webp" width="1155" height="1157" alt="Modelvisning i Power BI med tabeller for tidsregistreringer, opgaver, projektdata, kunder, brugere, kalender, budget, fakturaer og klippekort." loading="lazy"></button><figcaption>Den semantiske model.</figcaption></figure></div>
+    <div class="block"><div class="prose"><h2>Sådan voksede den</h2><p>Den første version kaldte ClickUp- og e‑conomic-API'erne direkte fra Power Query. ClickUp-API'et begrænser, hvor meget ét kald returnerer, så jeg tilføjede paginering og stagede tidsregistreringerne, før de blev omformet. Det virkede, men hver opdatering blev langsommere og mere skrøbelig, efterhånden som historikken voksede.</p><p>Derfor flyttede jeg udtrækket ud af Power BI og over i <a href="clickup-sync.html">ClickUp-synkroniseringen</a>. Rapporten læser nu Parquet- og JSON-filer fra Azure Data Lake, og tidsregistreringerne bruger inkrementel opdatering, så kun nye data indlæses igen. De samme filer bruges af <a href="approval-app.html">godkendelsesappen</a>, så begge værktøjer viser de samme tal.</p></div></div>
+    <nav class="next" aria-label="Projekter"><a href="clickup-sync.html">Forrige: ClickUp-synkronisering</a><a href="absence-app.html">Næste: Ferie- og fraværsapp</a></nav>
+  </main>
+  <footer class="footer">
+    <div class="wrap">© Andreas Gaardsted Vad</div>
+  </footer>
+  <dialog class="lightbox" aria-label="Skærmbillede">
+    <form method="dialog"><button>Luk</button></form>
+    <img src="" alt="">
+  </dialog>
+  <script src="../../js/site.js" defer></script>
+</body>
+</html>

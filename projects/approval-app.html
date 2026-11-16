@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Approval and invoicing app – Andreas Gaardsted Vad</title>
+  <meta name="description" content="A web app on Azure Functions where project managers approve hours per project and month and send them on to timesheets and invoices.">
+  <link rel="canonical" href="https://andgaa.github.io/projects/approval-app.html">
+  <link rel="alternate" hreflang="en" href="https://andgaa.github.io/projects/approval-app.html">
+  <link rel="alternate" hreflang="da" href="https://andgaa.github.io/da/projects/approval-app.html">
+  <link rel="alternate" hreflang="x-default" href="https://andgaa.github.io/projects/approval-app.html">
+  <meta property="og:title" content="Approval and invoicing app – Andreas Gaardsted Vad">
+  <meta property="og:description" content="A web app on Azure Functions where project managers approve hours per project and month and send them on to timesheets and invoices.">
+  <meta property="og:image" content="https://andgaa.github.io/img/andreas.webp">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="../img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&amp;display=swap">
+  <link rel="stylesheet" href="../css/site.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="band">
+    <header class="topbar">
+      <div class="wrap">
+        <a class="topbar__name" href="../">Andreas Gaardsted Vad</a>
+        <nav aria-label="Main">
+          <ul>
+            <li><a href="../#work">Work</a></li>
+            <li><a href="../#skills">Skills</a></li>
+            <li><a href="../#about">About</a></li>
+            <li><a href="../#contact">Contact</a></li>
+            <li><a class="lang" href="../da/projects/approval-app.html" hreflang="da" lang="da">Dansk</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <section class="project-hero wrap" aria-labelledby="title">
+      <a class="crumb" href="../#work">← All work</a>
+      <h1 id="title">Approval and invoicing app</h1>
+      <p class="lede">A web app where project managers approve each project's hours month by month and send them on to timesheets and invoices.</p>
+      <dl class="facts">
+        <div><dt>Stack</dt><dd>Python, Azure Functions, Jinja, JavaScript</dd></div>
+        <div><dt>Storage</dt><dd>Azure Table Storage, Blob Storage</dd></div>
+        <div><dt>Integrations</dt><dd>ClickUp, Power Automate, e‑conomic</dd></div>
+        <div><dt>Skills</dt><dd>Full-stack development, process design, data modeling</dd></div>
+      </dl>
+    </section>
+  </div>
+  <main id="main" class="wrap project">
+    <figure class="figure"><button type="button" aria-label="Enlarge screenshot"><img src="../img/approval-project.webp" width="1600" height="1000" alt="A project opened in the approval app: budget hours, hourly rate, three monthly approvals with their status, and a prepaid hour package."></button><figcaption>A project with its monthly approvals and a prepaid hour package. Demo data.</figcaption></figure>
+    <div class="block"><div class="prose"><h2>The problem</h2><p>Every month, the hours logged in ClickUp have to be checked, approved and invoiced – project by project. Projects follow different rules: hourly rates, budgets, prepaid hour packages, and customers who want a timesheet with their invoice. Doing that by hand across many projects took time and was easy to get wrong.</p></div></div>
+    <div class="block block--split"><div class="prose"><h2>How it works</h2><ul><li>For each project and month, the app builds an approval from the time entries the <a href="clickup-sync.html">sync pipeline</a> stores, combined with project data from ClickUp</li><li>Project managers approve the hours, adjust how many to invoice and add a comment</li><li>Each approval moves through clear statuses, from pending and ready to approved, sent to a draft invoice and invoiced</li><li>Several months can be combined into one invoice or one timesheet</li><li>Prepaid hour packages are synced from ClickUp and invoiced on their own</li></ul></div><div class="prose"><h2>Connected to the rest</h2><ul><li>Approving, invoicing and sending timesheets trigger Power Automate flows, which create the timesheets and draft invoices</li><li>If a flow fails, the approval is left unchanged and the user gets a clear error, so nothing is invoiced twice or lost</li><li>Project details such as customer, product and invoice text travel with each project, so invoices come out right</li></ul></div></div>
+    <div class="block block--split"><figure class="figure"><button type="button" aria-label="Enlarge screenshot"><img src="../img/approval-list.webp" width="1440" height="900" alt="The project list with search, a status filter and, for each project, ready approvals, total approvals and prepaids." loading="lazy"></button><figcaption>The project list, with search and a status filter. Demo data.</figcaption></figure><div class="prose"><h2>Architecture</h2><p>One Azure Function app serves both the API and the interface: a Jinja template with plain JavaScript on the front end, and HTTP endpoints behind it.</p><p>The code is split into repositories over Azure Table Storage, services for each workflow, and a small JSON cache in Blob Storage that keeps the app quick and can be refreshed on demand.</p></div></div>
+    <nav class="next" aria-label="Projects"><a href="../#work">All work</a><a href="clickup-sync.html">Next: ClickUp sync pipeline</a></nav>
+  </main>
+  <footer class="footer">
+    <div class="wrap">© Andreas Gaardsted Vad</div>
+  </footer>
+  <dialog class="lightbox" aria-label="Screenshot">
+    <form method="dialog"><button>Close</button></form>
+    <img src="" alt="">
+  </dialog>
+  <script src="../js/site.js" defer></script>
+</body>
+</html>
