@@ -59,6 +59,36 @@
     </section>
   </div>
   <main id="main">
+    <section class="section" id="strengths" aria-labelledby="strengths-title">
+      <div class="wrap">
+        <div class="section__head">
+          <h2 id="strengths-title">Det er jeg god til</h2>
+          <p>Tre ting, jeg er god til – hver med et projekt, du kan læse om.</p>
+        </div>
+        <div class="strengths">
+          <article class="strength">
+            <h3>Power BI, folk stoler på</h3>
+            <p>En rapport på 11 sider med omkring 160 DAX-measures, inkrementel opdatering og hele modellen versioneret i Git.</p>
+            <p class="strength__tools">Power BI, DAX, Power Query, PBIP</p>
+            <div class="strength__cases"><a class="case" href="projects/timetrack-powerbi.html"><span class="case__label">Case</span><strong>Timerapport</strong><span>11 Power BI-sider, omkring 160 measures</span></a></div>
+          </article>
+          <article class="strength is-active">
+            <h3>Datapipelines, der kører af sig selv</h3>
+            <p>Python på Azure Functions, der henter måneder parallelt, låser mod overlappende kørsler og logger hver kørsel i Data Lake.</p>
+            <p class="strength__tools">Python, Azure Functions, Parquet, Data Lake</p>
+            <div class="strength__cases"><a class="case" href="projects/clickup-sync.html"><span class="case__label">Case</span><strong>ClickUp-synkronisering</strong><span>Én Parquet-fil pr. måned, hver kørsel logget</span></a></div>
+          </article>
+          <article class="strength">
+            <h3>Forretningsapps omkring data</h3>
+            <p>Apps til godkendelse, fakturering og ferie med Microsoft-login, godkendelsesflows og automatisk deploy til Azure.</p>
+            <p class="strength__tools">Django, PostgreSQL, Power Automate, GitHub Actions</p>
+            <div class="strength__cases"><a class="case" href="projects/approval-app.html"><span class="case__label">Case</span><strong>App til godkendelse og fakturering</strong><span>Fra månedlig godkendelse til fakturakladde</span></a><a class="case" href="projects/absence-app.html"><span class="case__label">Case</span><strong>Ferie- og fraværsapp</strong><span>Django-app med Microsoft-login</span></a></div>
+          </article>
+        </div>
+        <p class="also"><strong>Også</strong> Microsoft Certified: Fabric Analytics Engineer Associate (<a href="https://learn.microsoft.com/api/credentials/share/en-us/AndreasGaardstedVad-6602/70CAC734A6191983?sharingId=DD96852B407B510C">se certifikatet</a>), Power Apps, Azure Table og Blob Storage, REST-API'er, JavaScript, Jinja</p>
+      </div>
+    </section>
+
     <section class="section" id="work" aria-labelledby="work-title">
       <div class="wrap">
         <div class="section__head">
@@ -106,30 +136,27 @@
     <section class="section" id="skills" aria-labelledby="skills-title">
       <div class="wrap">
         <div class="section__head">
-          <h2 id="skills-title">Det er jeg god til</h2>
-          <p>Tre ting, jeg er god til – hver med et projekt, du kan læse om.</p>
+          <h2 id="skills-title">Kompetencer</h2>
+          <p>Ordnet efter, hvor de hører til i dataflowet – fra kilde til beslutning.</p>
         </div>
-        <div class="strengths">
-          <article class="strength">
-            <h3>Power BI, folk stoler på</h3>
-            <p>En rapport på 11 sider med omkring 160 DAX-measures, inkrementel opdatering og hele modellen versioneret i Git.</p>
-            <p class="strength__tools">Power BI, DAX, Power Query, PBIP</p>
-            <div class="strength__cases"><a class="case" href="projects/timetrack-powerbi.html"><span class="case__label">Case</span><strong>Timerapport</strong><span>11 Power BI-sider, omkring 160 measures</span></a></div>
-          </article>
-          <article class="strength is-active">
-            <h3>Datapipelines, der kører af sig selv</h3>
-            <p>Python på Azure Functions, der henter måneder parallelt, låser mod overlappende kørsler og logger hver kørsel i Data Lake.</p>
-            <p class="strength__tools">Python, Azure Functions, Parquet, Data Lake</p>
-            <div class="strength__cases"><a class="case" href="projects/clickup-sync.html"><span class="case__label">Case</span><strong>ClickUp-synkronisering</strong><span>Én Parquet-fil pr. måned, hver kørsel logget</span></a></div>
-          </article>
-          <article class="strength">
-            <h3>Forretningsapps omkring data</h3>
-            <p>Apps til godkendelse, fakturering og ferie med Microsoft-login, godkendelsesflows og automatisk deploy til Azure.</p>
-            <p class="strength__tools">Django, PostgreSQL, Power Automate, GitHub Actions</p>
-            <div class="strength__cases"><a class="case" href="projects/approval-app.html"><span class="case__label">Case</span><strong>App til godkendelse og fakturering</strong><span>Fra månedlig godkendelse til fakturakladde</span></a><a class="case" href="projects/absence-app.html"><span class="case__label">Case</span><strong>Ferie- og fraværsapp</strong><span>Django-app med Microsoft-login</span></a></div>
-          </article>
+        <div class="stage-rows">
+          <section class="stage-row" aria-labelledby="stage-1">
+            <div class="stage-row__head"><span class="stage-row__num" aria-hidden="true">1</span><h3 id="stage-1">Indsaml</h3><p>Data ud af de systemer, virksomheden allerede bruger.</p></div>
+            <ul><li><strong>REST-API'er</strong><span>ClickUp og e‑conomic, med paginering, genforsøg og staging</span><span class="used">Brugt i: <a href="projects/clickup-sync.html">Synkronisering</a>, <a href="projects/timetrack-powerbi.html">Timerapport</a></span></li><li><strong>Python</strong><span>pandas, PyArrow og requests til udtræk og omformning</span><span class="used">Brugt i: <a href="projects/clickup-sync.html">Synkronisering</a>, <a href="projects/approval-app.html">Godkendelsesapp</a></span></li><li><strong>Azure Functions</strong><span>Jobs efter behov med låsning, friskhedstjek og kørselslog</span><span class="used">Brugt i: <a href="projects/clickup-sync.html">Synkronisering</a>, <a href="projects/approval-app.html">Godkendelsesapp</a></span></li><li><strong>Power Query (M)</strong><span>Egne API-forbindelser og transformationer</span><span class="used">Brugt i: <a href="projects/timetrack-powerbi.html">Timerapport</a></span></li></ul>
+          </section>
+          <section class="stage-row" aria-labelledby="stage-2">
+            <div class="stage-row__head"><span class="stage-row__num" aria-hidden="true">2</span><h3 id="stage-2">Lagr</h3><p>Data i en form, der er hurtig og billig at læse.</p></div>
+            <ul><li><strong>Parquet i Azure Data Lake</strong><span>Månedspartitioner, som kun skrives igen, når de ændrer sig</span><span class="used">Brugt i: <a href="projects/clickup-sync.html">Synkronisering</a>, <a href="projects/timetrack-powerbi.html">Timerapport</a></span></li><li><strong>PostgreSQL</strong><span>Relationelle modeller med constraints til HR- og feriedata</span><span class="used">Brugt i: <a href="projects/absence-app.html">HR-app</a></span></li><li><strong>Azure Table og Blob Storage</strong><span>Appdata, cache og uploads</span><span class="used">Brugt i: <a href="projects/approval-app.html">Godkendelsesapp</a>, <a href="projects/absence-app.html">HR-app</a></span></li></ul>
+          </section>
+          <section class="stage-row" aria-labelledby="stage-3">
+            <div class="stage-row__head"><span class="stage-row__num" aria-hidden="true">3</span><h3 id="stage-3">Modellér</h3><p>Rå tabeller bliver til tal, folk stoler på.</p></div>
+            <ul><li><strong>Semantiske modeller i Power BI</strong><span>Brotabeller, én fælles kalender og kilder samlet på tværs af systemer</span><span class="used">Brugt i: <a href="projects/timetrack-powerbi.html">Timerapport</a></span></li><li><strong>DAX</strong><span>Omkring 160 measures til budgetter, fakturering og klippekort</span><span class="used">Brugt i: <a href="projects/timetrack-powerbi.html">Timerapport</a></span></li><li><strong>Inkrementel opdatering og sikkerhed</strong><span>Kun nye data indlæses igen, og hver bruger ser det, de skal</span><span class="used">Brugt i: <a href="projects/timetrack-powerbi.html">Timerapport</a></span></li><li><strong>PBIP i Git</strong><span>Modellen og alle measures versioneret som kode</span><span class="used">Brugt i: <a href="projects/timetrack-powerbi.html">Timerapport</a></span></li></ul>
+          </section>
+          <section class="stage-row" aria-labelledby="stage-4">
+            <div class="stage-row__head"><span class="stage-row__num" aria-hidden="true">4</span><h3 id="stage-4">Lever</h3><p>Tallene ud, hvor beslutningerne træffes.</p></div>
+            <ul><li><strong>Power BI-rapporter</strong><span>En rapport på 11 sider til projektledere og ledelse</span><span class="used">Brugt i: <a href="projects/timetrack-powerbi.html">Timerapport</a></span></li><li><strong>Webapps</strong><span>Apps i Django og Azure Functions med Microsoft-login</span><span class="used">Brugt i: <a href="projects/absence-app.html">HR-app</a>, <a href="projects/approval-app.html">Godkendelsesapp</a></span></li><li><strong>Power Automate</strong><span>Flows, der laver timesedler og fakturakladder</span><span class="used">Brugt i: <a href="projects/approval-app.html">Godkendelsesapp</a>, <a href="projects/timetrack-powerbi.html">Timerapport</a></span></li><li><strong>CI/CD</strong><span>GitHub Actions, der deployer til Azure – test og produktion</span><span class="used">Brugt i: <a href="projects/absence-app.html">HR-app</a></span></li></ul>
+          </section>
         </div>
-        <p class="also"><strong>Også</strong> Microsoft Certified: Fabric Analytics Engineer Associate (<a href="https://learn.microsoft.com/api/credentials/share/en-us/AndreasGaardstedVad-6602/70CAC734A6191983?sharingId=DD96852B407B510C">se certifikatet</a>), Power Apps, Azure Table og Blob Storage, REST-API'er, JavaScript, Jinja</p>
       </div>
     </section>
 

@@ -59,6 +59,36 @@
     </section>
   </div>
   <main id="main">
+    <section class="section" id="strengths" aria-labelledby="strengths-title">
+      <div class="wrap">
+        <div class="section__head">
+          <h2 id="strengths-title">What I'm good at</h2>
+          <p>Three things I do well, each backed by a project you can read about.</p>
+        </div>
+        <div class="strengths">
+          <article class="strength">
+            <h3>Power BI that people trust</h3>
+            <p>An 11-page report with around 160 DAX measures, incremental refresh and the whole model versioned in Git.</p>
+            <p class="strength__tools">Power BI, DAX, Power Query, PBIP</p>
+            <div class="strength__cases"><a class="case" href="projects/timetrack-powerbi.html"><span class="case__label">Case study</span><strong>Time tracking report</strong><span>11 Power BI pages, around 160 measures</span></a></div>
+          </article>
+          <article class="strength is-active">
+            <h3>Data pipelines that run on their own</h3>
+            <p>Python on Azure Functions that fetches months in parallel, locks against overlapping runs and logs every run to the Data Lake.</p>
+            <p class="strength__tools">Python, Azure Functions, Parquet, Data Lake</p>
+            <div class="strength__cases"><a class="case" href="projects/clickup-sync.html"><span class="case__label">Case study</span><strong>ClickUp sync pipeline</strong><span>One Parquet file per month, every run logged</span></a></div>
+          </article>
+          <article class="strength">
+            <h3>Business apps around the data</h3>
+            <p>Approval, invoicing and vacation apps with Microsoft sign-in, approval flows and automatic deploys to Azure.</p>
+            <p class="strength__tools">Django, PostgreSQL, Power Automate, GitHub Actions</p>
+            <div class="strength__cases"><a class="case" href="projects/approval-app.html"><span class="case__label">Case study</span><strong>Approval and invoicing app</strong><span>From monthly approval to draft invoice</span></a><a class="case" href="projects/absence-app.html"><span class="case__label">Case study</span><strong>Vacation and absence app</strong><span>Django app with Microsoft sign-in</span></a></div>
+          </article>
+        </div>
+        <p class="also"><strong>Also</strong> Microsoft Certified: Fabric Analytics Engineer Associate (<a href="https://learn.microsoft.com/api/credentials/share/en-us/AndreasGaardstedVad-6602/70CAC734A6191983?sharingId=DD96852B407B510C">view credential</a>), Power Apps, Azure Table and Blob Storage, REST APIs, JavaScript, Jinja</p>
+      </div>
+    </section>
+
     <section class="section" id="work" aria-labelledby="work-title">
       <div class="wrap">
         <div class="section__head">
@@ -106,30 +136,27 @@
     <section class="section" id="skills" aria-labelledby="skills-title">
       <div class="wrap">
         <div class="section__head">
-          <h2 id="skills-title">What I'm good at</h2>
-          <p>Three things I do well, each backed by a project you can read about.</p>
+          <h2 id="skills-title">Skills</h2>
+          <p>Grouped by where they sit in the flow of data, from source to decision.</p>
         </div>
-        <div class="strengths">
-          <article class="strength">
-            <h3>Power BI that people trust</h3>
-            <p>An 11-page report with around 160 DAX measures, incremental refresh and the whole model versioned in Git.</p>
-            <p class="strength__tools">Power BI, DAX, Power Query, PBIP</p>
-            <div class="strength__cases"><a class="case" href="projects/timetrack-powerbi.html"><span class="case__label">Case study</span><strong>Time tracking report</strong><span>11 Power BI pages, around 160 measures</span></a></div>
-          </article>
-          <article class="strength is-active">
-            <h3>Data pipelines that run on their own</h3>
-            <p>Python on Azure Functions that fetches months in parallel, locks against overlapping runs and logs every run to the Data Lake.</p>
-            <p class="strength__tools">Python, Azure Functions, Parquet, Data Lake</p>
-            <div class="strength__cases"><a class="case" href="projects/clickup-sync.html"><span class="case__label">Case study</span><strong>ClickUp sync pipeline</strong><span>One Parquet file per month, every run logged</span></a></div>
-          </article>
-          <article class="strength">
-            <h3>Business apps around the data</h3>
-            <p>Approval, invoicing and vacation apps with Microsoft sign-in, approval flows and automatic deploys to Azure.</p>
-            <p class="strength__tools">Django, PostgreSQL, Power Automate, GitHub Actions</p>
-            <div class="strength__cases"><a class="case" href="projects/approval-app.html"><span class="case__label">Case study</span><strong>Approval and invoicing app</strong><span>From monthly approval to draft invoice</span></a><a class="case" href="projects/absence-app.html"><span class="case__label">Case study</span><strong>Vacation and absence app</strong><span>Django app with Microsoft sign-in</span></a></div>
-          </article>
+        <div class="stage-rows">
+          <section class="stage-row" aria-labelledby="stage-1">
+            <div class="stage-row__head"><span class="stage-row__num" aria-hidden="true">1</span><h3 id="stage-1">Collect</h3><p>Getting data out of the systems a business already runs on.</p></div>
+            <ul><li><strong>REST APIs</strong><span>ClickUp and e‑conomic, with paging, retries and staging</span><span class="used">Used in: <a href="projects/clickup-sync.html">Sync pipeline</a>, <a href="projects/timetrack-powerbi.html">Time report</a></span></li><li><strong>Python</strong><span>pandas, PyArrow and requests for extraction and reshaping</span><span class="used">Used in: <a href="projects/clickup-sync.html">Sync pipeline</a>, <a href="projects/approval-app.html">Approval app</a></span></li><li><strong>Azure Functions</strong><span>On-demand jobs with locking, freshness checks and run logs</span><span class="used">Used in: <a href="projects/clickup-sync.html">Sync pipeline</a>, <a href="projects/approval-app.html">Approval app</a></span></li><li><strong>Power Query (M)</strong><span>Custom API connectors and transformations</span><span class="used">Used in: <a href="projects/timetrack-powerbi.html">Time report</a></span></li></ul>
+          </section>
+          <section class="stage-row" aria-labelledby="stage-2">
+            <div class="stage-row__head"><span class="stage-row__num" aria-hidden="true">2</span><h3 id="stage-2">Store</h3><p>Keeping data in a shape that is fast and cheap to read.</p></div>
+            <ul><li><strong>Parquet in Azure Data Lake</strong><span>Monthly partitions, rewritten only when they change</span><span class="used">Used in: <a href="projects/clickup-sync.html">Sync pipeline</a>, <a href="projects/timetrack-powerbi.html">Time report</a></span></li><li><strong>PostgreSQL</strong><span>Relational models with constraints for HR and vacation data</span><span class="used">Used in: <a href="projects/absence-app.html">HR app</a></span></li><li><strong>Azure Table and Blob Storage</strong><span>App state, caches and uploads</span><span class="used">Used in: <a href="projects/approval-app.html">Approval app</a>, <a href="projects/absence-app.html">HR app</a></span></li></ul>
+          </section>
+          <section class="stage-row" aria-labelledby="stage-3">
+            <div class="stage-row__head"><span class="stage-row__num" aria-hidden="true">3</span><h3 id="stage-3">Model</h3><p>Turning raw tables into numbers people trust.</p></div>
+            <ul><li><strong>Power BI semantic models</strong><span>Bridge tables, a shared calendar and sources joined across systems</span><span class="used">Used in: <a href="projects/timetrack-powerbi.html">Time report</a></span></li><li><strong>DAX</strong><span>Around 160 measures for budgets, billing and prepaid hours</span><span class="used">Used in: <a href="projects/timetrack-powerbi.html">Time report</a></span></li><li><strong>Incremental refresh and security</strong><span>Reload only recent data; each person sees what they should</span><span class="used">Used in: <a href="projects/timetrack-powerbi.html">Time report</a></span></li><li><strong>PBIP in Git</strong><span>The model and every measure versioned as code</span><span class="used">Used in: <a href="projects/timetrack-powerbi.html">Time report</a></span></li></ul>
+          </section>
+          <section class="stage-row" aria-labelledby="stage-4">
+            <div class="stage-row__head"><span class="stage-row__num" aria-hidden="true">4</span><h3 id="stage-4">Deliver</h3><p>Putting the numbers where decisions are made.</p></div>
+            <ul><li><strong>Power BI reports</strong><span>An 11-page report for project managers and leadership</span><span class="used">Used in: <a href="projects/timetrack-powerbi.html">Time report</a></span></li><li><strong>Web apps</strong><span>Django and Azure Functions apps with Microsoft sign-in</span><span class="used">Used in: <a href="projects/absence-app.html">HR app</a>, <a href="projects/approval-app.html">Approval app</a></span></li><li><strong>Power Automate</strong><span>Flows that create timesheets and draft invoices</span><span class="used">Used in: <a href="projects/approval-app.html">Approval app</a>, <a href="projects/timetrack-powerbi.html">Time report</a></span></li><li><strong>CI/CD</strong><span>GitHub Actions deploying to Azure, staging and production</span><span class="used">Used in: <a href="projects/absence-app.html">HR app</a></span></li></ul>
+          </section>
         </div>
-        <p class="also"><strong>Also</strong> Microsoft Certified: Fabric Analytics Engineer Associate (<a href="https://learn.microsoft.com/api/credentials/share/en-us/AndreasGaardstedVad-6602/70CAC734A6191983?sharingId=DD96852B407B510C">view credential</a>), Power Apps, Azure Table and Blob Storage, REST APIs, JavaScript, Jinja</p>
       </div>
     </section>
 
