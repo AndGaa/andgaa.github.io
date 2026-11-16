@@ -32,10 +32,10 @@
       <h1>Vacation and absence app</h1>
       <p class="lede">One place for employees to register time away and for managers to approve it and keep vacation balances right.</p>
       <dl class="facts">
-        <div><dt>Users</dt><dd>Employees and managers</dd></div>
-        <div><dt>Platforms</dt><dd>Desktop, tablet and phone</dd></div>
-        <div><dt>Integrations</dt><dd>Slack</dd></div>
-        <div><dt>Skills</dt><dd>App development, process design, data modeling</dd></div>
+        <div><dt>Stack</dt><dd>Python, Django, PostgreSQL</dd></div>
+        <div><dt>Hosting</dt><dd>Azure App Service, Blob Storage, GitHub Actions</dd></div>
+        <div><dt>Integrations</dt><dd>Microsoft sign-in, Slack, email</dd></div>
+        <div><dt>Users</dt><dd>Employees, managers and HR – on desktop, tablet and phone</dd></div>
       </dl>
     </section>
 
@@ -62,6 +62,7 @@
           <li>Register vacation, sick days, sick child, days off, leave and working from home</li>
           <li>See the remaining vacation balance for the current vacation year at a glance</li>
           <li>Follow the status of each registration and see the year's history by month</li>
+          <li>Sign in with their Microsoft work account, and get an email when a request is approved or declined</li>
         </ul>
       </div>
     </div>
@@ -72,6 +73,8 @@
         <ul>
           <li>An overview of today's approved registrations and those waiting for approval</li>
           <li>All registrations per employee and type in one chart and table</li>
+          <li>Approve or decline with one click – managers and HR are notified by email when something new comes in</li>
+          <li>Reports on attendance, registrations and vacation</li>
           <li>Messages to the team on Slack straight from the app</li>
         </ul>
       </div>
@@ -89,6 +92,15 @@
       <div class="prose">
         <h2>Vacation years</h2>
         <p>The Danish vacation year runs from September to August, and balances have to be carried over correctly. The vacation management page handles that: starting a new vacation or calendar year, transferring days between years, and registering shared vacation days for everyone at once.</p>
+        <p>Danish public holidays are fetched automatically into the calendar, and the sixth vacation week is tracked separately from the statutory five.</p>
+      </div>
+    </div>
+
+    <div class="block">
+      <div class="prose">
+        <h2>How it's built</h2>
+        <p>A Django app on PostgreSQL, with role-based access so employees, project managers and HR each see what they should. Profile pictures and other uploads live in Azure Blob Storage.</p>
+        <p>It runs on Azure App Service with separate staging and production environments, and GitHub Actions deploys each one automatically.</p>
       </div>
     </div>
 
