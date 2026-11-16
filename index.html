@@ -37,7 +37,7 @@
         <div>
           <h1>Andreas<br>Gaardsted Vad</h1>
           <p class="hero__role">Data &amp; BI analyst building Power&nbsp;BI and Microsoft&nbsp;Fabric solutions</p>
-          <p class="hero__lede">I turn data from the systems a business already runs on – ClickUp, e‑conomic, in‑house apps – into models people trust and reports they actually open. I work across the whole chain: pulling data out of APIs, shaping it into semantic models, and building the reports and apps on top.</p>
+          <p class="hero__lede">I turn data from the systems a business already runs on – ClickUp, e‑conomic, in‑house apps – into models people trust and reports they actually open. I work across the whole chain: pulling data out of APIs, shaping it into semantic models, and building the reports, apps and Azure services on top.</p>
           <ul class="actions">
             <li><a class="btn btn--solid" href="mailto:andreasgaardsted@gmail.com">Email me</a></li>
             <li><a class="btn" href="https://www.linkedin.com/in/andreas-gaardsted-vad/">LinkedIn</a></li>
@@ -62,7 +62,8 @@
             <ul>
               <li><strong>Power BI</strong> – DAX, Power Query (M), interactive and KPI-driven reports</li>
               <li><strong>Microsoft Fabric</strong> – lakehouses, warehouses, pipelines and notebooks</li>
-              <li><strong>Python</strong> – pandas, Polars and NumPy for cleaning, automation and analysis</li>
+              <li><strong>Python</strong> – pandas, Polars, NumPy and PyArrow for data work; web apps and APIs</li>
+              <li><strong>Azure</strong> – Functions, Blob Storage and Table Storage</li>
               <li><strong>Power Platform</strong> – Power Apps and Power Automate for business processes</li>
               <li><a href="https://learn.microsoft.com/api/credentials/share/en-us/AndreasGaardstedVad-6602/70CAC734A6191983?sharingId=DD96852B407B510C">Microsoft Certified: Fabric Analytics Engineer Associate</a></li>
             </ul>
@@ -111,10 +112,34 @@
       <div class="wrap">
         <div class="section__head">
           <h2 id="work-title">Selected work</h2>
-          <p>Two tools I've built. Names and figures in the screenshots are anonymised.</p>
+          <p>The first three work together: the sync pipeline collects the data that the approval app and reporting are built on. Names and figures in the screenshots are anonymised or demo data.</p>
         </div>
 
         <div class="work">
+          <article class="work__item">
+            <a class="work__shot" href="projects/approval-app.html" tabindex="-1" aria-hidden="true">
+              <img src="img/approval-project.webp" width="1600" height="1000" alt="" loading="lazy">
+            </a>
+            <div>
+              <h3><a href="projects/approval-app.html">Approval and invoicing app</a></h3>
+              <ul class="tags"><li>Python</li><li>Azure Functions</li><li>Table Storage</li><li>Power Automate</li><li>e‑conomic</li></ul>
+              <p>A web app where project managers approve each project's hours month by month and send them on to timesheets and draft invoices – including prepaid hour packages.</p>
+              <a href="projects/approval-app.html">Read the case</a>
+            </div>
+          </article>
+
+          <article class="work__item">
+            <a class="work__shot" href="projects/clickup-sync.html" tabindex="-1" aria-hidden="true">
+              <img src="img/pipeline.svg" width="1200" height="560" alt="" loading="lazy">
+            </a>
+            <div>
+              <h3><a href="projects/clickup-sync.html">ClickUp sync pipeline</a></h3>
+              <ul class="tags"><li>Python</li><li>Azure Functions</li><li>Blob Storage</li><li>Parquet</li><li>pandas</li></ul>
+              <p>An Azure Function that copies time entries from ClickUp into monthly Parquet files, in parallel, with locking and a log of every run – so nothing downstream has to call the API.</p>
+              <a href="projects/clickup-sync.html">Read the case</a>
+            </div>
+          </article>
+
           <article class="work__item">
             <a class="work__shot" href="projects/timetrack-powerbi.html" tabindex="-1" aria-hidden="true">
               <img src="img/timetrack-overview.webp" width="1600" height="902" alt="" loading="lazy">
