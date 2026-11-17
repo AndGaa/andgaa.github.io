@@ -137,6 +137,13 @@ p { margin: 0; }
 .stage-row li .used { font-size: .9rem; color: var(--ink); }
 #strengths + #work { padding-top: 0; }
 
+/* Competencies */
+.comps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0 2.5rem; }
+.comps li { display: grid; align-content: start; gap: .35rem; padding-block: 1.4rem 1.6rem; border-top: 1px solid var(--line); }
+.comps strong { font-size: 1.35rem; line-height: 1.2; letter-spacing: -.01em; }
+.comps span { color: var(--muted); }
+.section--workflow { border-top: 1px solid var(--line); }
+
 /* Tools */
 .section--tools { border-top: 1px solid var(--line); }
 .tools { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr)); gap: 0 2.5rem; }
@@ -208,6 +215,7 @@ p { margin: 0; }
   .stage-row { grid-template-columns: minmax(0, 1fr); gap: 1.5rem; }
   .stage-row ul { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .cv-extra { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .comps { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 @media (max-width: 760px) {
   .hero__grid, .feature, .row, .block--split { grid-template-columns: minmax(0, 1fr); }
@@ -219,6 +227,7 @@ p { margin: 0; }
   .topbar .wrap { flex-wrap: nowrap; padding-block: 1.1rem; }
   .topbar nav li:not(:last-child) { display: none; }
   .cv-extra { grid-template-columns: minmax(0, 1fr); }
+  .comps { grid-template-columns: minmax(0, 1fr); }
   .row .row__side { grid-column: auto; }
   .row .shot img { height: auto; aspect-ratio: 16 / 10; }
   .jobs li { grid-template-columns: minmax(0, 1fr); gap: .25rem; }
